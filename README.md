@@ -4,7 +4,8 @@ This repository contains shared packages and resources that power the [Staart](h
 
 |  | Status |
 | - | - |
-| Build | [![GitHub Actions](https://github.com/staart/packages/workflows/Node%20CI/badge.svg)](https://github.com/staart/packages/actions) [![Travis CI](https://img.shields.io/travis/staart/packages?label=Travis%20CI)](https://travis-ci.org/staart/packages) [![Circle CI](https://img.shields.io/circleci/build/github/staart/packages?label=Circle%20CI)](https://circleci.com/gh/staart/packages) |
+| Build | [![Travis CI](https://img.shields.io/travis/staart/packages?label=Travis%20CI)](https://travis-ci.org/staart/packages) [![Circle CI](https://img.shields.io/circleci/build/github/staart/packages?label=Circle%20CI)](https://circleci.com/gh/staart/packages) |
+| [`@staart/example`](https://github.com/staart/packages/tree/master/packages/example) | [![npm package version](https://img.shields.io/npm/v/@staart/example)](https://www.npmjs.com/package/@staart/example) |
 
 ## 🛠 Usage
 
