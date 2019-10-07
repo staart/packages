@@ -1,6 +1,6 @@
 {
-  "name": "@staart/redis",
-  "version": "1.0.1",
+  "name": "@staart/errors",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
@@ -14,8 +14,5 @@
   "devDependencies": {
     "@types/node": "^12.7.11",
     "typescript": "^3.6.3"
-  },
-  "dependencies": {
-    "handy-redis": "^1.6.2"
   }
 }
