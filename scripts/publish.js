@@ -10,7 +10,7 @@ const publish = async () => {
 
   packagesList.forEach(package => {
     console.log(`Building ${package}...`);
-    console.log(exec(`cd ../packages/${package} && npm run build`).stdout);
+    console.log(exec(`cd ../packages/${package} && npm install && npm run build`).stdout);
   });
 ;
 }
