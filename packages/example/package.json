@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
+  "repository": "git@github.com:o15y/staart.css",
+  "author": "Anand Chowdhary <mail@anandchowdhary.com>",
+  "files": ["dist"],
   "scripts": {
     "build": "tsc"
   },
