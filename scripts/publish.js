@@ -10,7 +10,9 @@ const publish = async () => {
 
   packagesList.forEach(package => {
     console.log(`Building ${package}...`);
-    console.log(exec(`cd ../packages/${package} && npm install && npm run build`).stdout);
+    console.log(exec(`cd ../packages/${package} && npm install && npm run build${
+      process.env.NPM_TOKEN ? "&& npm publish --access public" : ""
+    }`).stdout);
   });
 ;
 }
