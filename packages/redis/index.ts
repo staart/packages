@@ -1,7 +1,7 @@
 import { createHandyClient } from "handy-redis";
 
 const redis = createHandyClient({
-  url: process.env.REDIS_URL || "",
+  url: process.env.REDIS_URL || "redis://127.0.0.1:6379",
   retry_strategy: options => {
     if (options.error && options.error.code === "ECONNREFUSED") {
       console.error("Redis connection failed", "Server refused the connection");
