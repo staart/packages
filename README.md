@@ -1,4 +1,4 @@
-# Staart packages
+# 📦 Staart packages
 
 This repository contains shared packages and resources that power the [Staart](https://github.com/o15y/staart) Node.js backend project.
 
