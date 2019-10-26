@@ -39,8 +39,10 @@ export const respond = (
     message.split("/").length > 1
       ? message.split("/")[1]
       : message;
+  const success = !code.toString().startsWith("4") && !code.toString().startsWith("5");
   const resultObject = {
     code,
+    success,
     message: messageWithoutCode,
     text: ucFirst(
       m(getText(message, req.params.lang), { resource: "resource", ...data })
