@@ -8,6 +8,17 @@ export const RESOURCE_UPDATED = `${OK}/updated`;
 export const RESOURCE_DELETED = `${OK}/deleted`;
 export const NO_CONTENT_CODE = NO_CONTENT;
 
+const m = (string?: string, data?: { [index: string]: string }) =>
+  string && data
+    ? Object.entries(data).reduce(
+        (r, [k, v]) => r.replace(new RegExp(`{{\\s*${k}\\s*}}`, "g"), v),
+        string
+      )
+    : undefined;
+
+const ucFirst = (string?: string) =>
+  string ? string.charAt(0).toUpperCase() + string.slice(1) : undefined;
+
 // Function to convert message to result object
 export const getText = (message: string, lang = "en") => {
   switch (lang) {
@@ -18,7 +29,12 @@ export const getText = (message: string, lang = "en") => {
   }
 };
 
-export const respond = (message: string, req: Request, res: Response) => {
+export const respond = (
+  req: Request,
+  res: Response,
+  message: string,
+  data?: { [index: string]: string }
+) => {
   const code =
     message.includes("/") && !isNaN(parseInt(message.split("/")[0]))
       ? parseInt(message.split("/")[0])
@@ -32,7 +48,9 @@ export const respond = (message: string, req: Request, res: Response) => {
   const resultObject = {
     code,
     message,
-    text: getText(message, req.params.lang)
+    text: ucFirst(
+      m(getText(message, req.params.lang), { resource: "resource", ...data })
+    )
   };
   return res.status(code).json(resultObject);
 };
