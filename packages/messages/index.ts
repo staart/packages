@@ -39,7 +39,7 @@ export const respond = (
     message.includes("/") && !isNaN(parseInt(message.split("/")[0]))
       ? parseInt(message.split("/")[0])
       : OK;
-  message =
+  const messageWithoutCode =
     message.includes("/") &&
     !isNaN(parseInt(message.split("/")[0])) &&
     message.split("/").length > 1
@@ -47,7 +47,7 @@ export const respond = (
       : message;
   const resultObject = {
     code,
-    message,
+    message: messageWithoutCode,
     text: ucFirst(
       m(getText(message, req.params.lang), { resource: "resource", ...data })
     )
