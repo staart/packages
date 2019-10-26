@@ -5,9 +5,10 @@ This repository contains shared packages and resources that power the [Staart](h
 |  | Status |
 | - | - |
 | Build | [![Travis CI](https://img.shields.io/travis/staart/packages?label=Travis%20CI)](https://travis-ci.org/staart/packages) [![Circle CI](https://img.shields.io/circleci/build/github/staart/packages?label=Circle%20CI)](https://circleci.com/gh/staart/packages) |
-| [`@staart/example`](https://github.com/staart/packages/tree/master/packages/example) | [![npm package version](https://img.shields.io/npm/v/@staart/example)](https://www.npmjs.com/package/@staart/example) [![npm](https://img.shields.io/npm/dw/@staart/manager)](https://www.npmjs.com/package/@staart/example) |
-| [`@staart/errors`](https://github.com/staart/packages/tree/master/packages/errors) | [![npm package version](https://img.shields.io/npm/v/@staart/errors)](https://www.npmjs.com/package/@staart/errors) [![npm](https://img.shields.io/npm/dw/@staart/manager)](https://www.npmjs.com/package/@staart/errors) |
-| [`@staart/redis`](https://github.com/staart/packages/tree/master/packages/redis) | [![npm package version](https://img.shields.io/npm/v/@staart/redis)](https://www.npmjs.com/package/@staart/redis) [![npm](https://img.shields.io/npm/dw/@staart/manager)](https://www.npmjs.com/package/@staart/redis) |
+| [`@staart/example`](https://github.com/staart/packages/tree/master/packages/example) | [![npm package version](https://img.shields.io/npm/v/@staart/example)](https://www.npmjs.com/package/@staart/example) [![npm](https://img.shields.io/npm/dw/@staart/example)](https://www.npmjs.com/package/@staart/example) |
+| [`@staart/errors`](https://github.com/staart/packages/tree/master/packages/errors) | [![npm package version](https://img.shields.io/npm/v/@staart/errors)](https://www.npmjs.com/package/@staart/errors) [![npm](https://img.shields.io/npm/dw/@staart/errors)](https://www.npmjs.com/package/@staart/errors) |
+| [`@staart/redis`](https://github.com/staart/packages/tree/master/packages/redis) | [![npm package version](https://img.shields.io/npm/v/@staart/redis)](https://www.npmjs.com/package/@staart/redis) [![npm](https://img.shields.io/npm/dw/@staart/redis)](https://www.npmjs.com/package/@staart/redis) |
+| [`@staart/messages`](https://github.com/staart/packages/tree/master/packages/messages) | [![npm package version](https://img.shields.io/npm/v/@staart/messages)](https://www.npmjs.com/package/@staart/messages) [![npm](https://img.shields.io/npm/dw/@staart/messages)](https://www.npmjs.com/package/@staart/messages) |
 
 ## 🛠 Usage
 
