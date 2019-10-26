@@ -1,12 +1,6 @@
-import { CREATED, NO_CONTENT, OK } from "http-status-codes";
+import { OK } from "http-status-codes";
 import { Request, Response } from "express";
 import en from "./locales/en";
-
-// General resource statuses messages
-export const RESOURCE_CREATED = `${CREATED}/created`;
-export const RESOURCE_UPDATED = `${OK}/updated`;
-export const RESOURCE_DELETED = `${OK}/deleted`;
-export const NO_CONTENT_CODE = NO_CONTENT;
 
 const m = (string?: string, data?: { [index: string]: string }) =>
   string && data

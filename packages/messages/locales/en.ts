@@ -1,4 +1,4 @@
-import { RESOURCE_CREATED, RESOURCE_UPDATED, RESOURCE_DELETED } from "../index";
+import { RESOURCE_CREATED, RESOURCE_UPDATED, RESOURCE_DELETED } from "../messages";
 
 const translations: {
   [index: string]: string;
