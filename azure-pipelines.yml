@@ -8,6 +8,7 @@ steps:
       versionSpec: "10.x"
     displayName: "Install Node.js"
   - script: |
+      cd scripts
       npm install
-      node scripts/publish.js
+      node publish.js
     displayName: "npm install, build, deploy"
