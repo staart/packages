@@ -1,7 +1,6 @@
 import disposableDomains from "disposable-email-domains/index.json";
 import wildcardDomains from "disposable-email-domains/wildcard.json";
-import { joiValidate } from "@staart/validate";
-import Joi from "@hapi/joi";
+import { joiValidate, Joi } from "@staart/validate";
 import { DISPOSABLE_EMAIL } from "@staart/errors";
 import { isMatch } from "matcher";
 

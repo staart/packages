@@ -2,9 +2,8 @@ dependencies:
   disposable-email-domains: 1.0.52
   matcher: 2.1.0
 devDependencies:
-  '@hapi/joi': 17.1.0
   '@staart/errors': 1.0.0
-  '@staart/validate': 1.0.0
+  '@staart/validate': 2.0.0
   '@types/hapi__joi': 16.0.11
   typescript: 3.8.2
 lockfileVersion: 5.1
@@ -49,12 +48,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-pGgNQnDyCoDlm89gCBzKPuq0cnzseqY5uPCxKzzuIbe8kzRXaydvy8n+ftDJ8KjBqzpjh66xf6DU9RQIFnivrw==
-  /@staart/validate/1.0.0:
+  /@staart/validate/2.0.0:
     dependencies:
       '@hapi/joi': 17.1.0
     dev: true
     resolution:
-      integrity: sha512-tZaYo8zASfpL//GMscK4+rnRQXzOVUSWtLYEWhin/iZQTfYfgjTPwTqu4BTYn5YwqB28p5p7vmPLLEutLDm8tQ==
+      integrity: sha512-Wjm63poebuorhWOmj1IY+Gmyz0VdHtFPH4dBCE+mn5naICXLkcKSnCw3Dfz5cf0nyr2Ij0YJ7F9NPJhybxgtfQ==
   /@types/hapi__joi/16.0.11:
     dev: true
     resolution:
@@ -89,9 +88,8 @@ packages:
     resolution:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
 specifiers:
-  '@hapi/joi': ^17.1.0
   '@staart/errors': ^1.0.0
-  '@staart/validate': ^1.0.0
+  '@staart/validate': ^2.0.0
   '@types/hapi__joi': ^16.0.11
   disposable-email-domains: ^1.0.52
   matcher: ^2.1.0
