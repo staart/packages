@@ -68,10 +68,44 @@ export const NOT_ENABLED_2FA = `${BAD_REQUEST}/invalid-2fa-token`;
 export const CANNOT_INVITE_DOMAIN = `${BAD_REQUEST}/cannot-invite-domain`;
 
 // Error logging
-import { success, error, warn } from "signale";
+import {
+  await,
+  complete,
+  error,
+  debug,
+  fatal,
+  fav,
+  info,
+  note,
+  pause,
+  pending,
+  star,
+  start,
+  success,
+  warn,
+  watch,
+  log
+} from "signale";
 export const logError = (category: string, err: string, level: 1 | 2 = 2) => {
   if (level === 1) return error(`${category}: ${err}`);
   warn(`${category}: ${err}`);
 };
 
-export { success, error, warn };
+export {
+  await,
+  complete,
+  error,
+  debug,
+  fatal,
+  fav,
+  info,
+  note,
+  pause,
+  pending,
+  star,
+  start,
+  success,
+  warn,
+  watch,
+  log
+};
