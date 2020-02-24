@@ -1,6 +1,6 @@
 {
   "name": "@staart/mustache-markdown",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
@@ -12,12 +12,12 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/marked": "^0.7.2",
-    "@types/mustache": "^4.0.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
     "marked": "^0.8.0",
-    "mustache": "^4.0.0"
+    "mustache": "^4.0.0",
+    "@types/marked": "^0.7.2",
+    "@types/mustache": "^4.0.0"
   }
 }
