@@ -12,9 +12,20 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@hapi/joi": "^17.1.0",
+    "@staart/errors": "^1.0.0",
+    "@staart/validate": "^1.0.0",
+    "@types/hapi__joi": "^16.0.11",
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "disposable-email-domains": "^1.0.52"
+    "disposable-email-domains": "^1.0.52",
+    "matcher": "^2.1.0"
+  },
+  "peerDependencies": {
+    "@hapi/joi": "^17.1.0",
+    "@staart/errors": "^1.0.0",
+    "@staart/validate": "^1.0.0",
+    "@types/hapi__joi": "^16.0.11"
   }
 }
