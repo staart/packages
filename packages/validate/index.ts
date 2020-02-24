@@ -11,3 +11,5 @@ export const joiValidate = (schemaMap: Joi.SchemaMap, data: any) => {
   if (result.error) throw new Error(`joi:${JSON.stringify(result.error)}`);
   return true;
 };
+
+export { Joi };
