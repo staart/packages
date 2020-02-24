@@ -1,0 +1,56 @@
+dependencies:
+  crypto-random-string: 3.1.0
+  hashids: 2.2.1
+  ip-anonymize: 0.1.0
+  slugify: 1.3.6
+devDependencies:
+  '@types/node': 13.7.4
+  typescript: 3.8.2
+lockfileVersion: 5.1
+packages:
+  /@types/node/13.7.4:
+    dev: true
+    resolution:
+      integrity: sha512-oVeL12C6gQS/GAExndigSaLxTrKpQPxewx9bOcwfvJiJge4rr7wNaph4J+ns5hrmIV2as5qxqN8YKthn9qh0jw==
+  /crypto-random-string/3.1.0:
+    dependencies:
+      type-fest: 0.8.1
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-Tip3yGB+bA7B0W8E4K4mNf2rZhu5r2G5Tb89/utEl5tP1QuLjTF/S9a1b8ifDrR4ORc9Utf6tscpSEtBY3YcPQ==
+  /hashids/2.2.1:
+    dev: false
+    resolution:
+      integrity: sha512-+hQeKWwpSDiWFeu/3jKUvwboE4Z035gR6FnpscbHPOEEjCbgv2px9/Mlb3O0nOTRyZOw4MMFRYfVL3zctOV6OQ==
+  /ip-anonymize/0.1.0:
+    dev: false
+    resolution:
+      integrity: sha512-cZJu+N5JKKFGMK0eEQWNaQMn2EhCysciVM6eotCJwfqotj16BTfVchKsJCH6mQAT9N0GC7oWRcsZ6Lb8dDiwTA==
+  /slugify/1.3.6:
+    dev: false
+    engines:
+      node: '>=4.0.0'
+    resolution:
+      integrity: sha512-wA9XS475ZmGNlEnYYLPReSfuz/c3VQsEMoU43mi6OnKMCdbnFXd4/Yg7J0lBv8jkPolacMpOrWEaoYxuE1+hoQ==
+  /type-fest/0.8.1:
+    dev: false
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
+  /typescript/3.8.2:
+    dev: true
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+specifiers:
+  '@types/node': ^13.7.4
+  crypto-random-string: ^3.1.0
+  hashids: ^2.2.1
+  ip-anonymize: ^0.1.0
+  slugify: ^1.3.6
+  typescript: ^3.6.3
