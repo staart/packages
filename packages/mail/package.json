@@ -1,5 +1,5 @@
 {
-  "name": "@staart/example",
+  "name": "@staart/mail",
   "version": "1.0.0",
   "main": "dist/index.js",
   "license": "MIT",
@@ -12,7 +12,16 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "@staart/errors": "^1.2.0",
     "@types/node": "^13.7.4",
     "typescript": "^3.6.3"
+  },
+  "peerDependencies": {
+    "@staart/errors": "^1.2.0"
+  },
+  "dependencies": {
+    "@types/nodemailer": "^6.4.0",
+    "aws-sdk": "^2.625.0",
+    "nodemailer": "^6.4.3"
   }
 }

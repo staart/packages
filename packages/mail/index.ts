@@ -1,26 +1,48 @@
+import { createTransport, Transporter } from "nodemailer";
+import { success, logError } from "@staart/errors";
+import aws from "aws-sdk";
+
 const EMAIL_FROM = process.env.EMAIL_FROM || "";
 const EMAIL_HOST = process.env.EMAIL_HOST || "";
 const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD || "";
 
-const transporter = createTransport(
-  {
-    host: EMAIL_HOST,
-    port: 465,
-    secure: true,
-    auth: {
-      user: EMAIL_FROM,
-      pass: EMAIL_PASSWORD
-    }
-  },
-  {
-    from: EMAIL_FROM
-  }
-);
+const SES_SECRET = process.env.SES_SECRET || "";
+const SES_ACCESS = process.env.SES_ACCESS || "";
+const SES_EMAIL = process.env.SES_EMAIL || "";
+const SES_REGION = process.env.SES_REGION || "";
 
-transporter
-  .verify()
-  .then(() => success("Email transport works"))
-  .catch(() => logError("SMTP", "Unable to verify email transport", 1));
+let transporter: Transporter | undefined = undefined;
+
+export const setupTransporter = () => {
+  if (SES_ACCESS && SES_SECRET) {
+    transporter = createTransport({
+      SES: new aws.SES({
+        apiVersion: "2010-12-01",
+        accessKeyId: SES_ACCESS,
+        secretAccessKey: SES_SECRET,
+        region: SES_REGION
+      })
+    });
+  } else {
+    transporter = createTransport({
+      host: EMAIL_HOST,
+      port: 465,
+      secure: true,
+      auth: {
+        user: EMAIL_FROM,
+        pass: EMAIL_PASSWORD
+      }
+    });
+  }
+};
+
+export const sendTestEmail = () => {
+  if (transporter)
+    transporter
+      .verify()
+      .then(() => success("Email transport works"))
+      .catch(() => logError("Email", "Unable to verify email transport", 1));
+};
 
 export interface Mail {
   from: string;
@@ -37,7 +59,10 @@ export interface Mail {
  * Send a new email
  */
 export const sendMail = async (mail: Mail) => {
+  if (!transporter)
+    return logError("Email", "Setup transporter before sending an email", 1);
   const result = await transporter.sendMail({
+    from: EMAIL_FROM || SES_EMAIL,
     to: mail.to,
     cc: mail.cc,
     bcc: mail.bcc,
