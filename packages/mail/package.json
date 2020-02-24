@@ -1,6 +1,6 @@
 {
   "name": "@staart/mail",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
@@ -12,13 +12,12 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@staart/errors": "^1.2.0",
+    "@staart/errors": "^1.2.1",
     "@types/node": "^13.7.4",
-    "@types/signale": "^1.2.1",
     "typescript": "^3.6.3"
   },
   "peerDependencies": {
-    "@staart/errors": "^1.2.0"
+    "@staart/errors": "^1.2.1"
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.0",
