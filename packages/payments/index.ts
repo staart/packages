@@ -23,16 +23,16 @@ const cleanStripeResponse = (response: Stripe.ApiList<any>) => {
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const getStripeCustomer = async (id: string) => {
+export const getCustomer = async (id: string) => {
   return await stripe.customers.retrieve(id);
 };
 
 /**
  * Get the details of a customer
  */
-export const createStripeCustomer = async (
+export const createCustomer = async (
   organizationId: string,
   customer: Stripe.CustomerCreateParams,
   updateOrganization: (id: string, organization: any) => Promise<any>
@@ -47,9 +47,9 @@ export const createStripeCustomer = async (
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const deleteStripeCustomer = async (id: string) => {
+export const deleteCustomer = async (id: string) => {
   await stripe.customers.del(id);
   return { success: true, message: "billing-customer-deleted" };
 };
@@ -57,7 +57,7 @@ export const deleteStripeCustomer = async (id: string) => {
 /**
  * Update the details of a customer
  */
-export const updateStripeCustomer = async (
+export const updateCustomer = async (
   id: string,
   customer: Stripe.CustomerUpdateParams
 ) => {
@@ -67,9 +67,9 @@ export const updateStripeCustomer = async (
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const getStripeInvoices = async (
+export const getInvoices = async (
   id: string,
   {
     start,
@@ -99,9 +99,9 @@ export const getStripeInvoices = async (
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const getStripeInvoice = async (id: string, invoiceId: string) => {
+export const getInvoice = async (id: string, invoiceId: string) => {
   const invoice = await stripe.invoices.retrieve(invoiceId);
   if (invoice.customer !== id) throw new Error(INVOICE_NOT_FOUND);
   return invoice;
@@ -109,9 +109,9 @@ export const getStripeInvoice = async (id: string, invoiceId: string) => {
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const getStripeSubscriptions = async (
+export const getSubscriptions = async (
   id: string,
   {
     start,
@@ -141,12 +141,9 @@ export const getStripeSubscriptions = async (
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const getStripeSubscription = async (
-  id: string,
-  subscriptionId: string
-) => {
+export const getSubscription = async (id: string, subscriptionId: string) => {
   const subscription = await stripe.subscriptions.retrieve(subscriptionId);
   if (subscription.customer !== id) throw new Error(SUBSCRIPTION_NOT_FOUND);
   return subscription;
@@ -154,23 +151,23 @@ export const getStripeSubscription = async (
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const updateStripeSubscription = async (
+export const updateSubscription = async (
   id: string,
   subscriptionId: string,
   data: Stripe.SubscriptionUpdateParams
 ) => {
-  await getStripeSubscription(id, subscriptionId);
+  await getSubscription(id, subscriptionId);
   await stripe.subscriptions.update(subscriptionId, data);
   return { success: true, message: "billing-subscription-updated" };
 };
 
 /**
  * Create a new subscription
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const createStripeSubscription = async (
+export const createSubscription = async (
   id: string,
   {
     tax_percent,
@@ -196,9 +193,9 @@ export const createStripeSubscription = async (
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const getStripeProductPricing = async () => {
+export const getProductPricing = async () => {
   const plans = await stripe.plans.list({ product: STRIPE_PRODUCT_ID });
   // If you have a custom plan for a client, don't show that
   plans.data = plans.data.filter(
@@ -209,9 +206,9 @@ export const getStripeProductPricing = async () => {
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const getStripeSources = async (
+export const getSources = async (
   id: string,
   {
     start,
@@ -232,39 +229,35 @@ export const getStripeSources = async (
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const getStripeSource = async (id: string, sourceId: string) => {
+export const getSource = async (id: string, sourceId: string) => {
   return await stripe.customers.retrieveSource(id, sourceId);
 };
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const deleteStripeSource = async (id: string, sourceId: string) => {
+export const deleteSource = async (id: string, sourceId: string) => {
   await stripe.customers.deleteSource(id, sourceId);
   return { success: true, message: "billing-source-deleted" };
 };
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const createStripeSource = async (id: string, source: any) => {
+export const createSource = async (id: string, source: any) => {
   await stripe.customers.createSource(id, { source });
   return { success: true, message: "billing-source-created" };
 };
 
 /**
  * Get the details of a customer
- * @param id - Stripe customer ID
+ * @param id - External customer ID
  */
-export const updateStripeSource = async (
-  id: string,
-  cardId: string,
-  data: any
-) => {
+export const updateSource = async (id: string, cardId: string, data: any) => {
   await stripe.customers.updateSource(id, cardId, data);
   return { success: true, message: "billing-source-updated" };
 };
