@@ -11,5 +11,5 @@ export const render = (
   options?: MarkedOptions
 ) => {
   const md = mustache(markdown, view || {}, partials, tags);
-  return marked(md, options);
+  return [md, marked(md, options)];
 };
