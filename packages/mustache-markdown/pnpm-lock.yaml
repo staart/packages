@@ -1,0 +1,44 @@
+dependencies:
+  marked: 0.8.0
+  mustache: 4.0.0
+devDependencies:
+  '@types/marked': 0.7.2
+  '@types/mustache': 4.0.0
+  typescript: 3.8.2
+lockfileVersion: 5.1
+packages:
+  /@types/marked/0.7.2:
+    dev: true
+    resolution:
+      integrity: sha512-A3EDyNaq6OCcpaOia2HQ/tu2QYt8DKuj4ExP21VU3cU3HTo2FLslvbqa2T1vux910RHvuSVqpwKnnykSFcRWOA==
+  /@types/mustache/4.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-AVBOcLJenbpCIJcHUvGWj+YMlaiwcFlGK1YEH2mePXkB5B/vQLrFkHG9IpBH71mXnkbibc4V8Nnn1wJSxcgCEA==
+  /marked/0.8.0:
+    dev: false
+    engines:
+      node: '>= 8.16.2'
+    hasBin: true
+    resolution:
+      integrity: sha512-MyUe+T/Pw4TZufHkzAfDj6HarCBWia2y27/bhuYkTaiUnfDYFnCP3KUN+9oM7Wi6JA2rymtVYbQu3spE0GCmxQ==
+  /mustache/4.0.0:
+    dev: false
+    engines:
+      npm: '>=1.4.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-FJgjyX/IVkbXBXYUwH+OYwQKqWpFPLaLVESd70yHjSDunwzV2hZOoTBvPf4KLoxesUzzyfTH6F784Uqd7Wm5yA==
+  /typescript/3.8.2:
+    dev: true
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+specifiers:
+  '@types/marked': ^0.7.2
+  '@types/mustache': ^4.0.0
+  marked: ^0.8.0
+  mustache: ^4.0.0
+  typescript: ^3.6.3

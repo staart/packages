@@ -1,0 +1,23 @@
+{
+  "name": "@staart/mustache-markdown",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": "git@github.com:staart/packages",
+  "author": "Anand Chowdhary <mail@anandchowdhary.com>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/marked": "^0.7.2",
+    "@types/mustache": "^4.0.0",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "marked": "^0.8.0",
+    "mustache": "^4.0.0"
+  }
+}
