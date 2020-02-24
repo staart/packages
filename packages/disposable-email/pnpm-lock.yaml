@@ -1,0 +1,20 @@
+dependencies:
+  disposable-email-domains: 1.0.52
+devDependencies:
+  typescript: 3.8.2
+lockfileVersion: 5.1
+packages:
+  /disposable-email-domains/1.0.52:
+    dev: false
+    resolution:
+      integrity: sha512-0m1VmfPCpaf2/fKTBFSrZlghifBzEdWa0APoUAeLiNIde0mjYY7hhTc2wMC8dZaYebDEXhpNez/9syDxI+ciDw==
+  /typescript/3.8.2:
+    dev: true
+    engines:
+      node: '>=4.2.0'
+    hasBin: true
+    resolution:
+      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+specifiers:
+  disposable-email-domains: ^1.0.52
+  typescript: ^3.6.3

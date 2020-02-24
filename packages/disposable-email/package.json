@@ -1,0 +1,20 @@
+{
+  "name": "@staart/example",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": "git@github.com:staart/packages",
+  "author": "Anand Chowdhary <mail@anandchowdhary.com>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "disposable-email-domains": "^1.0.52"
+  }
+}
