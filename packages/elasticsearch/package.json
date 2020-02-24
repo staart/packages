@@ -1,0 +1,27 @@
+{
+  "name": "@staart/elasticsearch",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": "git@github.com:staart/packages",
+  "author": "Anand Chowdhary <mail@anandchowdhary.com>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@staart/errors": "^1.2.1",
+    "@types/node": "^13.7.4",
+    "typescript": "^3.6.3"
+  },
+  "dependencies": {
+    "@elastic/elasticsearch": "^7.6.0",
+    "aws-elasticsearch-connector": "^8.2.0",
+    "aws-sdk": "^2.625.0"
+  },
+  "peerDependencies": {
+    "@staart/errors": "^1.2.1"
+  }
+}
