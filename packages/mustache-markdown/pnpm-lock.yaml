@@ -50,9 +50,9 @@ packages:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
 specifiers:
   '@types/marked': ^0.7.2
-  '@types/mustache': ^4.0.0
+  '@types/mustache': ^4.0.1
   '@types/node': ^13.7.6
   dotenv: ^8.2.0
   marked: ^0.8.0
   mustache: ^4.0.0
-  typescript: ^3.6.3
+  typescript: ^3.8.2

@@ -1,6 +1,6 @@
 {
   "name": "@staart/payments",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",

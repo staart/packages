@@ -64,7 +64,7 @@ packages:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
 specifiers:
   '@hapi/joi': ^17.1.0
-  '@types/hapi__joi': ^16.0.11
+  '@types/hapi__joi': ^16.0.12
   '@types/node': ^13.7.6
   dotenv: ^8.2.0
-  typescript: ^3.6.3
+  typescript: ^3.8.2

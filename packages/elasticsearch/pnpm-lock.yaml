@@ -3,7 +3,7 @@ dependencies:
   aws-elasticsearch-connector: 8.2.0_d019337600661dd4892a8e7988d926bc
   aws-sdk: 2.627.0
 devDependencies:
-  '@staart/errors': 1.2.1
+  '@staart/errors': 2.0.0_dotenv@8.2.0
   '@types/node': 13.7.6
   dotenv: 8.2.0
   typescript: 3.8.2
@@ -22,14 +22,17 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-mCS0gro7KM9fhPpRXf+X0Bxd2j688ONqhj2fibhU2E3vup6rmNgH0bw3Vuvv98D8MmFl2oCxwtv3a/Km/K8F6Q==
-  /@staart/errors/1.2.1:
+  /@staart/errors/2.0.0_dotenv@8.2.0:
     dependencies:
       '@types/signale': 1.2.1
+      dotenv: 8.2.0
       http-status-codes: 1.4.0
       signale: 1.4.0
     dev: true
+    peerDependencies:
+      dotenv: ^8.2.0
     resolution:
-      integrity: sha512-Afef32+wi/ThAtYVyNn9UuM/DXKdx4U+pv4MCX1uxqXkgwF6ELzinHn9tYDXSQ15fV8ZTT8Z6aNkSrrc3np6YA==
+      integrity: sha512-mz/28ljdUh1WbW4eot7Z8er5i0FiPIGoGil7F58PEcSKL19+F5ciAAxOBtgnQfsy09+Be4FKsFTrIXOhD2lz0Q==
   /@types/node/13.7.6:
     dev: true
     resolution:
@@ -445,9 +448,9 @@ packages:
       integrity: sha1-Ey7mPS7FVlxVfiD0wi35rKaGsQ0=
 specifiers:
   '@elastic/elasticsearch': ^7.6.0
-  '@staart/errors': ^1.2.1
-  '@types/node': ^13.7.4
+  '@staart/errors': ^2.0.0
+  '@types/node': ^13.7.6
   aws-elasticsearch-connector: ^8.2.0
-  aws-sdk: ^2.625.0
+  aws-sdk: ^2.627.0
   dotenv: ^8.2.0
-  typescript: ^3.6.3
+  typescript: ^3.8.2

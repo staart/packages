@@ -1,17 +1,17 @@
 dependencies:
   handy-redis: 1.8.0
 devDependencies:
-  '@types/node': 12.12.28
+  '@types/node': 13.7.6
   dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
 packages:
-  /@types/node/12.12.28:
+  /@types/node/13.7.6:
     resolution:
-      integrity: sha512-g73GJYJDXgf0jqg+P9S8h2acWbDXNkoCX8DLtJVu7Fkn788pzQ/oJsrdJz/2JejRf/SjfZaAhsw+3nd1D5EWGg==
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /@types/redis/2.8.16:
     dependencies:
-      '@types/node': 12.12.28
+      '@types/node': 13.7.6
     dev: false
     resolution:
       integrity: sha512-7iJzu9OvKPuKiZxlIVG7P3UM7C3XX4FxXk9f24MkAvucze93Zp4XzoERmDaKQnaZP0Qv1pMAq25lAvUPCKXCHQ==
@@ -73,7 +73,7 @@ packages:
     resolution:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
 specifiers:
-  '@types/node': ^12.7.11
+  '@types/node': ^13.7.6
   dotenv: ^8.2.0
-  handy-redis: ^1.6.2
-  typescript: ^3.6.3
+  handy-redis: ^1.8.0
+  typescript: ^3.8.2

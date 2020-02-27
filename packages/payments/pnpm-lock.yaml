@@ -1,20 +1,23 @@
 dependencies:
   stripe: 8.22.0
 devDependencies:
-  '@staart/errors': 1.2.1
+  '@staart/errors': 2.0.1_dotenv@8.2.0
   '@types/node': 13.7.6
   dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
 packages:
-  /@staart/errors/1.2.1:
+  /@staart/errors/2.0.1_dotenv@8.2.0:
     dependencies:
       '@types/signale': 1.2.1
+      dotenv: 8.2.0
       http-status-codes: 1.4.0
       signale: 1.4.0
     dev: true
+    peerDependencies:
+      dotenv: ^8.2.0
     resolution:
-      integrity: sha512-Afef32+wi/ThAtYVyNn9UuM/DXKdx4U+pv4MCX1uxqXkgwF6ELzinHn9tYDXSQ15fV8ZTT8Z6aNkSrrc3np6YA==
+      integrity: sha512-ZD+2JcByLx9sdbgtKKGGtPKTUD3VpqUVt5gu1jqNn7zq4kiH73SGr3wYDEb7WgMJ2+TEI0B+pYiObrKmZNiW8Q==
   /@types/node/13.7.6:
     resolution:
       integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
@@ -227,8 +230,8 @@ packages:
     resolution:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
 specifiers:
-  '@staart/errors': ^1.2.1
-  '@types/node': ^13.7.4
+  '@staart/errors': ^2.0.0
+  '@types/node': ^13.7.6
   dotenv: ^8.2.0
-  stripe: ^8.20.0
-  typescript: ^3.6.3
+  stripe: ^8.22.0
+  typescript: ^3.8.2

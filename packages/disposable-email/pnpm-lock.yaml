@@ -2,8 +2,8 @@ dependencies:
   disposable-email-domains: 1.0.52
   matcher: 2.1.0
 devDependencies:
-  '@staart/errors': 1.2.1
-  '@staart/validate': 2.1.0
+  '@staart/errors': 2.0.0_dotenv@8.2.0
+  '@staart/validate': 3.0.0_dotenv@8.2.0
   '@types/hapi__joi': 16.0.12
   dotenv: 8.2.0
   typescript: 3.8.2
@@ -43,20 +43,26 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tFJlT47db0kMqVm3H4nQYgn6Pwg10GTZHb1pwmSiv1K4ks6drQOtfEF5ZnPjkvC+y4/bUPHK+bc87QvLcL+WMw==
-  /@staart/errors/1.2.1:
+  /@staart/errors/2.0.0_dotenv@8.2.0:
     dependencies:
       '@types/signale': 1.2.1
+      dotenv: 8.2.0
       http-status-codes: 1.4.0
       signale: 1.4.0
     dev: true
+    peerDependencies:
+      dotenv: ^8.2.0
     resolution:
-      integrity: sha512-Afef32+wi/ThAtYVyNn9UuM/DXKdx4U+pv4MCX1uxqXkgwF6ELzinHn9tYDXSQ15fV8ZTT8Z6aNkSrrc3np6YA==
-  /@staart/validate/2.1.0:
+      integrity: sha512-mz/28ljdUh1WbW4eot7Z8er5i0FiPIGoGil7F58PEcSKL19+F5ciAAxOBtgnQfsy09+Be4FKsFTrIXOhD2lz0Q==
+  /@staart/validate/3.0.0_dotenv@8.2.0:
     dependencies:
       '@hapi/joi': 17.1.0
+      dotenv: 8.2.0
     dev: true
+    peerDependencies:
+      dotenv: ^8.2.0
     resolution:
-      integrity: sha512-X6ebYQ7NJE0bV8LcO384UJU4v+0JuaYe7hDmx3j+rFifYRwL5mLMG+19UvASTsa4fY0d87HIORXqFiMA627vbQ==
+      integrity: sha512-Z+tPoU4W+D8riZKkbSV73VHHy9jb1r6eqFQzXTJSuNr6JvV+xCohn7/v6VRRtmKDepQ5EeQdfFy2y3E6J20PZA==
   /@types/hapi__joi/16.0.12:
     dev: true
     resolution:
@@ -277,10 +283,10 @@ packages:
     resolution:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
 specifiers:
-  '@staart/errors': ^1.0.0
-  '@staart/validate': ^2.0.0
-  '@types/hapi__joi': ^16.0.11
+  '@staart/errors': ^2.0.0
+  '@staart/validate': ^3.0.0
+  '@types/hapi__joi': ^16.0.12
   disposable-email-domains: ^1.0.52
   dotenv: ^8.2.0
   matcher: ^2.1.0
-  typescript: ^3.6.3
+  typescript: ^3.8.2
