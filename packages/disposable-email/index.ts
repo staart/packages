@@ -1,8 +1,11 @@
+import { config } from "dotenv";
 import disposableDomains from "disposable-email-domains/index.json";
 import wildcardDomains from "disposable-email-domains/wildcard.json";
 import { joiValidate, Joi } from "@staart/validate";
 import { DISPOSABLE_EMAIL } from "@staart/errors";
 import { isMatch } from "matcher";
+
+config();
 
 /**
  * Check if an email is disposable

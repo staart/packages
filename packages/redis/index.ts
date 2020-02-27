@@ -1,4 +1,7 @@
+import { config } from "dotenv";
 import { createHandyClient } from "handy-redis";
+
+config();
 
 const redis = createHandyClient({
   url: process.env.REDIS_URL || "redis://127.0.0.1:6379",
@@ -12,7 +15,10 @@ const redis = createHandyClient({
     }
 
     if (options.attempt > 10) {
-      console.error("Redis connection failed", "Max number of attempts exceeded");
+      console.error(
+        "Redis connection failed",
+        "Max number of attempts exceeded"
+      );
       return 43200;
     }
 

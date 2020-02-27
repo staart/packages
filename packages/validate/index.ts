@@ -1,3 +1,4 @@
+import { config } from "dotenv";
 import Joi, {
   ErrorFormattingOptions,
   BaseValidationOptions,
@@ -84,6 +85,8 @@ import Joi, {
   CoerceFunction,
   ExtensionFactory
 } from "@hapi/joi";
+
+config();
 
 /**
  * Validate an object with its schema map

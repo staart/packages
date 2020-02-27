@@ -1,7 +1,10 @@
+import { config } from "dotenv";
 import { Client } from "@elastic/elasticsearch";
 import { RESOURCE_NOT_FOUND } from "@staart/errors";
 import { AmazonConnection } from "aws-elasticsearch-connector";
 import AWS from "aws-sdk";
+
+config();
 
 const ELASTIC_HOST = process.env.ELASTIC_HOST || "";
 const AWS_ELASTIC_ACCESS_KEY = process.env.AWS_ELASTIC_ACCESS_KEY || "";

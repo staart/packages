@@ -1,3 +1,4 @@
+import { config } from "dotenv";
 import {
   NOT_FOUND,
   UNPROCESSABLE_ENTITY,
@@ -7,6 +8,8 @@ import {
   INTERNAL_SERVER_ERROR,
   BAD_REQUEST
 } from "http-status-codes";
+
+config();
 
 // Server errors
 export const DEFAULT = `${INTERNAL_SERVER_ERROR}/server-error`;

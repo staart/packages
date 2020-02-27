@@ -1,7 +1,10 @@
+import { config } from "dotenv";
 import helmet from "helmet";
 import cors from "cors";
 import responseTime from "response-time";
 import { json, urlencoded } from "body-parser";
+
+config();
 
 export const setupMiddleware = (app: any) => {
   if (!process.env.DISALLOW_OPEN_CORS)

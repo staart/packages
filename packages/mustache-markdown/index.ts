@@ -1,5 +1,8 @@
+import { config } from "dotenv";
 import { render as mustache } from "mustache";
 import marked, { MarkedOptions } from "marked";
+
+config();
 
 export const render = (
   markdown: string,

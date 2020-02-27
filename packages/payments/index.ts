@@ -1,5 +1,8 @@
+import { config } from "dotenv";
 import Stripe from "stripe";
 import { INVOICE_NOT_FOUND, SUBSCRIPTION_NOT_FOUND } from "@staart/errors";
+
+config();
 
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || "";
 const STRIPE_PRODUCT_ID = process.env.STRIPE_PRODUCT_ID || "";

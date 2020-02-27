@@ -1,6 +1,9 @@
+import { config } from "dotenv";
 import { OK } from "http-status-codes";
 import { Request, Response } from "express";
 import en from "./locales/en";
+
+config();
 
 const m = (string?: string, data?: { [index: string]: string }) =>
   string && data
@@ -39,7 +42,8 @@ export const respond = (
     message.split("/").length > 1
       ? message.split("/")[1]
       : message;
-  const success = !code.toString().startsWith("4") && !code.toString().startsWith("5");
+  const success =
+    !code.toString().startsWith("4") && !code.toString().startsWith("5");
   const resultObject = {
     code,
     success,

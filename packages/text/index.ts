@@ -1,7 +1,10 @@
+import { config } from "dotenv";
 import anonymize from "ip-anonymize";
 import Hashids from "hashids/cjs";
 import slugify from "slugify";
 import cryptoRandomString from "crypto-random-string";
+
+config();
 
 const HASH_IDS = process.env.HASH_IDS || "";
 const HASH_ID_PREFIX = process.env.HASH_ID_PREFIX || "";

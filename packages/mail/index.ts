@@ -1,6 +1,9 @@
+import { config } from "dotenv";
 import { createTransport, Transporter } from "nodemailer";
 import { success, logError } from "@staart/errors";
 import aws from "aws-sdk";
+
+config();
 
 const EMAIL_FROM = process.env.EMAIL_FROM || "";
 const EMAIL_HOST = process.env.EMAIL_HOST || "";
