@@ -4,6 +4,7 @@ dependencies:
   marked: 0.8.0
   mustache: 4.0.0
 devDependencies:
+  '@types/node': 13.7.6
   dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
@@ -16,6 +17,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-wH6Tu9mbiOt0n5EvdoWy0VGQaJMHfLIxY/6wS0xLC7CV1taM6gESEzcYy0ZlWvxxiiljYvfDIvz4hHbUUDRlhw==
+  /@types/node/13.7.6:
+    dev: true
+    resolution:
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /dotenv/8.2.0:
     dev: true
     engines:
@@ -46,6 +51,7 @@ packages:
 specifiers:
   '@types/marked': ^0.7.2
   '@types/mustache': ^4.0.0
+  '@types/node': ^13.7.6
   dotenv: ^8.2.0
   marked: ^0.8.0
   mustache: ^4.0.0
