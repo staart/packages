@@ -2,6 +2,7 @@ dependencies:
   '@hapi/joi': 17.1.0
 devDependencies:
   '@types/hapi__joi': 16.0.12
+  '@types/node': 13.7.6
   dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
@@ -44,6 +45,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-xJYifuz59jXdWY5JMS15uvA3ycS3nQYOGqoIIE0+fwQ0qI3/4CxBc6RHsOTp6wk9M0NWEdpcTl02lOQOKMifbQ==
+  /@types/node/13.7.6:
+    dev: true
+    resolution:
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /dotenv/8.2.0:
     dev: true
     engines:
@@ -60,5 +65,6 @@ packages:
 specifiers:
   '@hapi/joi': ^17.1.0
   '@types/hapi__joi': ^16.0.11
+  '@types/node': ^13.7.6
   dotenv: ^8.2.0
   typescript: ^3.6.3

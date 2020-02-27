@@ -1,8 +1,13 @@
 devDependencies:
+  '@types/node': 13.7.6
   dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
 packages:
+  /@types/node/13.7.6:
+    dev: true
+    resolution:
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /dotenv/8.2.0:
     dev: true
     engines:
@@ -17,5 +22,6 @@ packages:
     resolution:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
 specifiers:
+  '@types/node': ^13.7.6
   dotenv: ^8.2.0
   typescript: ^3.6.3
