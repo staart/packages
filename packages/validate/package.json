@@ -12,10 +12,10 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/hapi__joi": "^16.0.11",
+    "@types/hapi__joi": "^16.0.12",
     "@types/node": "^13.7.6",
     "dotenv": "^8.2.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.8.2"
   },
   "dependencies": {
     "@hapi/joi": "^17.1.0"

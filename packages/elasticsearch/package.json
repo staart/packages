@@ -12,18 +12,18 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@staart/errors": "^1.2.1",
-    "@types/node": "^13.7.4",
+    "@staart/errors": "^2.0.0",
+    "@types/node": "^13.7.6",
     "dotenv": "^8.2.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.8.2"
   },
   "dependencies": {
     "@elastic/elasticsearch": "^7.6.0",
     "aws-elasticsearch-connector": "^8.2.0",
-    "aws-sdk": "^2.625.0"
+    "aws-sdk": "^2.627.0"
   },
   "peerDependencies": {
-    "@staart/errors": "^1.2.1",
+    "@staart/errors": "^2.0.0",
     "dotenv": "^8.2.0"
   }
 }

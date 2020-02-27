@@ -12,16 +12,16 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@staart/errors": "^1.2.1",
-    "@types/node": "^13.7.4",
+    "@staart/errors": "^2.0.0",
+    "@types/node": "^13.7.6",
     "dotenv": "^8.2.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.8.2"
   },
   "peerDependencies": {
-    "@staart/errors": "^1.2.1",
+    "@staart/errors": "^2.0.0",
     "dotenv": "^8.2.0"
   },
   "dependencies": {
-    "stripe": "^8.20.0"
+    "stripe": "^8.22.0"
   }
 }

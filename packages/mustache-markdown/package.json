@@ -14,11 +14,11 @@
   "devDependencies": {
     "@types/node": "^13.7.6",
     "dotenv": "^8.2.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.8.2"
   },
   "dependencies": {
     "@types/marked": "^0.7.2",
-    "@types/mustache": "^4.0.0",
+    "@types/mustache": "^4.0.1",
     "marked": "^0.8.0",
     "mustache": "^4.0.0"
   },

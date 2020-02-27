@@ -12,12 +12,12 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@types/node": "^12.7.11",
+    "@types/node": "^13.7.6",
     "dotenv": "^8.2.0",
-    "typescript": "^3.6.3"
+    "typescript": "^3.8.2"
   },
   "dependencies": {
-    "handy-redis": "^1.6.2"
+    "handy-redis": "^1.8.0"
   },
   "peerDependencies": {
     "dotenv": "^8.2.0"
