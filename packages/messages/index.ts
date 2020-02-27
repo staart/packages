@@ -1,6 +1,5 @@
 import { config } from "dotenv";
 import { OK } from "http-status-codes";
-import { Request, Response } from "express";
 import en from "./locales/en";
 
 config();
@@ -27,8 +26,8 @@ export const getText = (message: string, lang = "en") => {
 };
 
 export const respond = (
-  req: Request,
-  res: Response,
+  req: any,
+  res: any,
   message: string,
   data?: { [index: string]: string }
 ) => {
