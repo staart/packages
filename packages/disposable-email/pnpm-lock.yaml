@@ -2,9 +2,10 @@ dependencies:
   disposable-email-domains: 1.0.52
   matcher: 2.1.0
 devDependencies:
-  '@staart/errors': 1.0.0
-  '@staart/validate': 2.0.0
-  '@types/hapi__joi': 16.0.11
+  '@staart/errors': 1.2.1
+  '@staart/validate': 2.1.0
+  '@types/hapi__joi': 16.0.12
+  dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
 packages:
@@ -42,36 +43,148 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tFJlT47db0kMqVm3H4nQYgn6Pwg10GTZHb1pwmSiv1K4ks6drQOtfEF5ZnPjkvC+y4/bUPHK+bc87QvLcL+WMw==
-  /@staart/errors/1.0.0:
+  /@staart/errors/1.2.1:
     dependencies:
+      '@types/signale': 1.2.1
       http-status-codes: 1.4.0
+      signale: 1.4.0
     dev: true
     resolution:
-      integrity: sha512-pGgNQnDyCoDlm89gCBzKPuq0cnzseqY5uPCxKzzuIbe8kzRXaydvy8n+ftDJ8KjBqzpjh66xf6DU9RQIFnivrw==
-  /@staart/validate/2.0.0:
+      integrity: sha512-Afef32+wi/ThAtYVyNn9UuM/DXKdx4U+pv4MCX1uxqXkgwF6ELzinHn9tYDXSQ15fV8ZTT8Z6aNkSrrc3np6YA==
+  /@staart/validate/2.1.0:
     dependencies:
       '@hapi/joi': 17.1.0
     dev: true
     resolution:
-      integrity: sha512-Wjm63poebuorhWOmj1IY+Gmyz0VdHtFPH4dBCE+mn5naICXLkcKSnCw3Dfz5cf0nyr2Ij0YJ7F9NPJhybxgtfQ==
-  /@types/hapi__joi/16.0.11:
+      integrity: sha512-X6ebYQ7NJE0bV8LcO384UJU4v+0JuaYe7hDmx3j+rFifYRwL5mLMG+19UvASTsa4fY0d87HIORXqFiMA627vbQ==
+  /@types/hapi__joi/16.0.12:
     dev: true
     resolution:
-      integrity: sha512-Gndkl4WXpuJovi6XFOfJN74VX/Ynk6Hp74Vfex5in/UKBnG6eSdX2wK3nkYY8jsDy8kuuEFoz1F5AGMGz4edmw==
+      integrity: sha512-xJYifuz59jXdWY5JMS15uvA3ycS3nQYOGqoIIE0+fwQ0qI3/4CxBc6RHsOTp6wk9M0NWEdpcTl02lOQOKMifbQ==
+  /@types/node/13.7.6:
+    dev: true
+    resolution:
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+  /@types/signale/1.2.1:
+    dependencies:
+      '@types/node': 13.7.6
+    dev: true
+    resolution:
+      integrity: sha512-mV6s2VgcBC16Jb+1EwulgRrrZBT93V4JCILkNPg31rvvSK6LRQQGU8R/SUivgHjDZ5LJZu/yL2kMF8j85YQTnA==
+  /ansi-styles/3.2.1:
+    dependencies:
+      color-convert: 1.9.3
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==
+  /chalk/2.4.2:
+    dependencies:
+      ansi-styles: 3.2.1
+      escape-string-regexp: 1.0.5
+      supports-color: 5.5.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==
+  /color-convert/1.9.3:
+    dependencies:
+      color-name: 1.1.3
+    dev: true
+    resolution:
+      integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==
+  /color-name/1.1.3:
+    dev: true
+    resolution:
+      integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
   /disposable-email-domains/1.0.52:
     dev: false
     resolution:
       integrity: sha512-0m1VmfPCpaf2/fKTBFSrZlghifBzEdWa0APoUAeLiNIde0mjYY7hhTc2wMC8dZaYebDEXhpNez/9syDxI+ciDw==
+  /dotenv/8.2.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+  /error-ex/1.3.2:
+    dependencies:
+      is-arrayish: 0.2.1
+    dev: true
+    resolution:
+      integrity: sha512-7dFHNmqeFSEt2ZBsCriorKnn3Z2pj+fd9kmI6QoWw4//DL+icEBfc0U7qJCisqrTsKTjw4fNFy2pW9OqStD84g==
+  /escape-string-regexp/1.0.5:
+    dev: true
+    engines:
+      node: '>=0.8.0'
+    resolution:
+      integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
   /escape-string-regexp/2.0.0:
     dev: false
     engines:
       node: '>=8'
     resolution:
       integrity: sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
+  /figures/2.0.0:
+    dependencies:
+      escape-string-regexp: 1.0.5
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-OrGi0qYsi/tDGgyUy3l6L84nyWI=
+  /find-up/2.1.0:
+    dependencies:
+      locate-path: 2.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-RdG35QbHF93UgndaK3eSCjwMV6c=
+  /graceful-fs/4.2.3:
+    dev: true
+    resolution:
+      integrity: sha512-a30VEBm4PEdx1dRB7MFK7BejejvCvBronbLjht+sHuGYj8PHs7M/5Z+rt5lw551vZ7yfTCj4Vuyy3mSJytDWRQ==
+  /has-flag/3.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
   /http-status-codes/1.4.0:
     dev: true
     resolution:
       integrity: sha512-JrT3ua+WgH8zBD3HEJYbeEgnuQaAnUeRRko/YojPAJjGmIfGD3KPU/asLdsLwKjfxOmQe5nXMQ0pt/7MyapVbQ==
+  /is-arrayish/0.2.1:
+    dev: true
+    resolution:
+      integrity: sha1-d8mYQFJ6qOyxqLppe4BkWnqSap0=
+  /json-parse-better-errors/1.0.2:
+    dev: true
+    resolution:
+      integrity: sha512-mrqyZKfX5EhL7hvqcV6WG1yYjnjeuYDzDhhcAAUrq8Po85NBQBJP+ZDUT75qZQ98IkUoBqdkExkukOU7Ts2wrw==
+  /load-json-file/4.0.0:
+    dependencies:
+      graceful-fs: 4.2.3
+      parse-json: 4.0.0
+      pify: 3.0.0
+      strip-bom: 3.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-L19Fq5HjMhYjT9U62rZo607AmTs=
+  /locate-path/2.0.0:
+    dependencies:
+      p-locate: 2.0.0
+      path-exists: 3.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-K1aLJl7slExtnA3pw9u7ygNUzY4=
   /matcher/2.1.0:
     dependencies:
       escape-string-regexp: 2.0.0
@@ -80,6 +193,82 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-o+nZr+vtJtgPNklyeUKkkH42OsK8WAfdgaJE2FNxcjLPg+5QbeEoT6vRj8Xq/iv18JlQ9cmKsEu0b94ixWf1YQ==
+  /p-limit/1.3.0:
+    dependencies:
+      p-try: 1.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-vvcXsLAJ9Dr5rQOPk7toZQZJApBl2K4J6dANSsEuh6QI41JYcsS/qhTGa9ErIUUgK3WNQoJYvylxvjqmiqEA9Q==
+  /p-locate/2.0.0:
+    dependencies:
+      p-limit: 1.3.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-IKAQOyIqcMj9OcwuWAaA893l7EM=
+  /p-try/1.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=
+  /parse-json/4.0.0:
+    dependencies:
+      error-ex: 1.3.2
+      json-parse-better-errors: 1.0.2
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-vjX1Qlvh9/bHRxhPmKeIy5lHfuA=
+  /path-exists/3.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-zg6+ql94yxiSXqfYENe1mwEP1RU=
+  /pify/3.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-5aSs0sEB/fPZpNB/DbxNtJ3SgXY=
+  /pkg-conf/2.1.0:
+    dependencies:
+      find-up: 2.1.0
+      load-json-file: 4.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-ISZRTKbyq/69FoWW3xi6V4Z/AFg=
+  /signale/1.4.0:
+    dependencies:
+      chalk: 2.4.2
+      figures: 2.0.0
+      pkg-conf: 2.1.0
+    dev: true
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-iuh+gPf28RkltuJC7W5MRi6XAjTDCAPC/prJUpQoG4vIP3MJZ+GTydVnodXA7pwvTKb2cA0m9OFZW/cdWy/I/w==
+  /strip-bom/3.0.0:
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
+  /supports-color/5.5.0:
+    dependencies:
+      has-flag: 3.0.0
+    dev: true
+    engines:
+      node: '>=4'
+    resolution:
+      integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
   /typescript/3.8.2:
     dev: true
     engines:
@@ -92,5 +281,6 @@ specifiers:
   '@staart/validate': ^2.0.0
   '@types/hapi__joi': ^16.0.11
   disposable-email-domains: ^1.0.52
+  dotenv: ^8.2.0
   matcher: ^2.1.0
   typescript: ^3.6.3

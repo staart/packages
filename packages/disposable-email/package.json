@@ -14,8 +14,9 @@
   "devDependencies": {
     "@staart/errors": "^1.0.0",
     "@staart/validate": "^2.0.0",
-    "typescript": "^3.6.3",
-    "@types/hapi__joi": "^16.0.11"
+    "@types/hapi__joi": "^16.0.11",
+    "dotenv": "^8.2.0",
+    "typescript": "^3.6.3"
   },
   "dependencies": {
     "disposable-email-domains": "^1.0.52",
@@ -23,6 +24,7 @@
   },
   "peerDependencies": {
     "@staart/errors": "^1.0.0",
-    "@staart/validate": "^2.0.0"
+    "@staart/validate": "^2.0.0",
+    "dotenv": "^8.2.0"
   }
 }

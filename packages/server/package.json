@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@types/node": "^13.7.5",
+    "dotenv": "^8.2.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
@@ -24,5 +25,8 @@
     "cors": "^2.8.5",
     "helmet": "^3.21.3",
     "response-time": "^2.3.2"
+  },
+  "peerDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

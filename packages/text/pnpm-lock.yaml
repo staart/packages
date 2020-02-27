@@ -4,14 +4,15 @@ dependencies:
   ip-anonymize: 0.1.0
   slugify: 1.3.6
 devDependencies:
-  '@types/node': 13.7.4
+  '@types/node': 13.7.6
+  dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
 packages:
-  /@types/node/13.7.4:
+  /@types/node/13.7.6:
     dev: true
     resolution:
-      integrity: sha512-oVeL12C6gQS/GAExndigSaLxTrKpQPxewx9bOcwfvJiJge4rr7wNaph4J+ns5hrmIV2as5qxqN8YKthn9qh0jw==
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /crypto-random-string/3.1.0:
     dependencies:
       type-fest: 0.8.1
@@ -20,6 +21,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-Tip3yGB+bA7B0W8E4K4mNf2rZhu5r2G5Tb89/utEl5tP1QuLjTF/S9a1b8ifDrR4ORc9Utf6tscpSEtBY3YcPQ==
+  /dotenv/8.2.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /hashids/2.2.1:
     dev: false
     resolution:
@@ -50,6 +57,7 @@ packages:
 specifiers:
   '@types/node': ^13.7.4
   crypto-random-string: ^3.1.0
+  dotenv: ^8.2.0
   hashids: ^2.2.1
   ip-anonymize: ^0.1.0
   slugify: ^1.3.6

@@ -12,12 +12,16 @@
     "build": "tsc"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "marked": "^0.8.0",
-    "mustache": "^4.0.0",
     "@types/marked": "^0.7.2",
-    "@types/mustache": "^4.0.0"
+    "@types/mustache": "^4.0.0",
+    "marked": "^0.8.0",
+    "mustache": "^4.0.0"
+  },
+  "peerDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

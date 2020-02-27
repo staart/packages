@@ -14,10 +14,12 @@
   "devDependencies": {
     "@staart/errors": "^1.2.1",
     "@types/node": "^13.7.4",
+    "dotenv": "^8.2.0",
     "typescript": "^3.6.3"
   },
   "peerDependencies": {
-    "@staart/errors": "^1.2.1"
+    "@staart/errors": "^1.2.1",
+    "dotenv": "^8.2.0"
   },
   "dependencies": {
     "@types/nodemailer": "^6.4.0",

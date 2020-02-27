@@ -5,11 +5,17 @@
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
   "author": "Anand Chowdhary <mail@anandchowdhary.com>",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc"
   },
   "devDependencies": {
+    "dotenv": "^8.2.0",
     "typescript": "^3.6.3"
+  },
+  "peerDependencies": {
+    "dotenv": "^8.2.0"
   }
 }

@@ -1,10 +1,11 @@
 dependencies:
   '@elastic/elasticsearch': 7.6.0
-  aws-elasticsearch-connector: 8.2.0_4ac36d40d78f47b38a08dbc3d59b216e
-  aws-sdk: 2.625.0
+  aws-elasticsearch-connector: 8.2.0_d019337600661dd4892a8e7988d926bc
+  aws-sdk: 2.627.0
 devDependencies:
   '@staart/errors': 1.2.1
-  '@types/node': 13.7.4
+  '@types/node': 13.7.6
+  dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
 packages:
@@ -29,13 +30,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-Afef32+wi/ThAtYVyNn9UuM/DXKdx4U+pv4MCX1uxqXkgwF6ELzinHn9tYDXSQ15fV8ZTT8Z6aNkSrrc3np6YA==
-  /@types/node/13.7.4:
+  /@types/node/13.7.6:
     dev: true
     resolution:
-      integrity: sha512-oVeL12C6gQS/GAExndigSaLxTrKpQPxewx9bOcwfvJiJge4rr7wNaph4J+ns5hrmIV2as5qxqN8YKthn9qh0jw==
+      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
   /@types/signale/1.2.1:
     dependencies:
-      '@types/node': 13.7.4
+      '@types/node': 13.7.6
     dev: true
     resolution:
       integrity: sha512-mV6s2VgcBC16Jb+1EwulgRrrZBT93V4JCILkNPg31rvvSK6LRQQGU8R/SUivgHjDZ5LJZu/yL2kMF8j85YQTnA==
@@ -47,10 +48,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA==
-  /aws-elasticsearch-connector/8.2.0_4ac36d40d78f47b38a08dbc3d59b216e:
+  /aws-elasticsearch-connector/8.2.0_d019337600661dd4892a8e7988d926bc:
     dependencies:
       '@elastic/elasticsearch': 7.6.0
-      aws-sdk: 2.625.0
+      aws-sdk: 2.627.0
       aws4: 1.9.1
       lodash.get: 4.4.2
     dev: false
@@ -61,7 +62,7 @@ packages:
       aws-sdk: ^2.556.0
     resolution:
       integrity: sha512-Jp60FPmFDa/mB8WRr/jLwvCx2yjFkYZCVUfaDS87F1tRN+7fD6zMrFzOV6kTMuG3MF2nb5gfhJIne4/Y1yDcQw==
-  /aws-sdk/2.625.0:
+  /aws-sdk/2.627.0:
     dependencies:
       buffer: 4.9.1
       events: 1.1.1
@@ -76,7 +77,7 @@ packages:
     engines:
       node: '>= 0.8.0'
     resolution:
-      integrity: sha512-8OoXw5SE/IliSo8q204amuLN46E2g1pGJQjVFTstoiETfaZvRxabL+DzIigJSV8QdybzzETGV3w50jvMfbsJ8A==
+      integrity: sha512-78XdgRYkxpfMpmYQT8uuOClTAxlyDL81WC8TG7XHonXr3l4l+Mbo38wvIRwUiqTvuDIMMni5S5fUeugG2fZxSQ==
   /aws4/1.9.1:
     dev: false
     resolution:
@@ -131,6 +132,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-jOSne2qbyE+/r8G1VU+G/82LBs2Fs4LAsTiLSHOCOMZQl2OKZ6i8i4IyHemTe+/yIXOtTcRQMzPcgyhoFlqPkw==
+  /dotenv/8.2.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /end-of-stream/1.4.4:
     dependencies:
       once: 1.4.0
@@ -442,4 +449,5 @@ specifiers:
   '@types/node': ^13.7.4
   aws-elasticsearch-connector: ^8.2.0
   aws-sdk: ^2.625.0
+  dotenv: ^8.2.0
   typescript: ^3.6.3
