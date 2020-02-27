@@ -230,7 +230,7 @@ packages:
     resolution:
       integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
 specifiers:
-  '@staart/errors': ^2.0.0
+  '@staart/errors': ^2.0.1
   '@types/node': ^13.7.6
   dotenv: ^8.2.0
   stripe: ^8.22.0

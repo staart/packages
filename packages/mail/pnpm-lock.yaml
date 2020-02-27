@@ -3,13 +3,13 @@ dependencies:
   aws-sdk: 2.627.0
   nodemailer: 6.4.3
 devDependencies:
-  '@staart/errors': 2.0.0_dotenv@8.2.0
+  '@staart/errors': 2.0.1_dotenv@8.2.0
   '@types/node': 13.7.6
   dotenv: 8.2.0
   typescript: 3.8.2
 lockfileVersion: 5.1
 packages:
-  /@staart/errors/2.0.0_dotenv@8.2.0:
+  /@staart/errors/2.0.1_dotenv@8.2.0:
     dependencies:
       '@types/signale': 1.2.1
       dotenv: 8.2.0
@@ -19,7 +19,7 @@ packages:
     peerDependencies:
       dotenv: ^8.2.0
     resolution:
-      integrity: sha512-mz/28ljdUh1WbW4eot7Z8er5i0FiPIGoGil7F58PEcSKL19+F5ciAAxOBtgnQfsy09+Be4FKsFTrIXOhD2lz0Q==
+      integrity: sha512-ZD+2JcByLx9sdbgtKKGGtPKTUD3VpqUVt5gu1jqNn7zq4kiH73SGr3wYDEb7WgMJ2+TEI0B+pYiObrKmZNiW8Q==
   /@types/node/13.7.6:
     resolution:
       integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
@@ -316,7 +316,7 @@ packages:
     resolution:
       integrity: sha1-Ey7mPS7FVlxVfiD0wi35rKaGsQ0=
 specifiers:
-  '@staart/errors': ^2.0.0
+  '@staart/errors': ^2.0.1
   '@types/node': ^13.7.6
   '@types/nodemailer': ^6.4.0
   aws-sdk: ^2.627.0

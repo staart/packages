@@ -1,6 +1,6 @@
 {
   "name": "@staart/disposable-email",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
@@ -12,7 +12,7 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@staart/errors": "^2.0.0",
+    "@staart/errors": "^2.0.1",
     "@staart/validate": "^3.0.0",
     "@types/hapi__joi": "^16.0.12",
     "dotenv": "^8.2.0",
@@ -23,7 +23,7 @@
     "matcher": "^2.1.0"
   },
   "peerDependencies": {
-    "@staart/errors": "^2.0.0",
+    "@staart/errors": "^2.0.1",
     "@staart/validate": "^3.0.0",
     "dotenv": "^8.2.0"
   }

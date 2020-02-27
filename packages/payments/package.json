@@ -1,6 +1,6 @@
 {
   "name": "@staart/payments",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
@@ -12,13 +12,13 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@staart/errors": "^2.0.0",
+    "@staart/errors": "^2.0.1",
     "@types/node": "^13.7.6",
     "dotenv": "^8.2.0",
     "typescript": "^3.8.2"
   },
   "peerDependencies": {
-    "@staart/errors": "^2.0.0",
+    "@staart/errors": "^2.0.1",
     "dotenv": "^8.2.0"
   },
   "dependencies": {
