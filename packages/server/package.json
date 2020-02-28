@@ -1,6 +1,6 @@
 {
   "name": "@staart/server",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
@@ -19,6 +19,7 @@
   "dependencies": {
     "@types/body-parser": "^1.19.0",
     "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.2",
     "@types/helmet": "^0.0.45",
     "@types/response-time": "^2.3.4",
     "body-parser": "^1.19.0",
