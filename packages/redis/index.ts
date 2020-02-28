@@ -1,10 +1,27 @@
 import { config } from "dotenv";
 import { createHandyClient } from "handy-redis";
+import { URL } from "url";
+import RedisSMQ from "rsmq";
 
 config();
 
+const REDIS_URL = process.env.REDIS_URL || "redis://127.0.0.1:6379";
+const parsedUrl = new URL(REDIS_URL);
+
+const host = parsedUrl.hostname || "127.0.0.1";
+const port = Number(parsedUrl.port || 6379);
+const password = parsedUrl.password
+  ? decodeURIComponent(parsedUrl.password)
+  : null;
+
+export const redisQueue: RedisSMQ = new (RedisSMQ as any)({
+  host,
+  port,
+  password
+});
+
 const redis = createHandyClient({
-  url: process.env.REDIS_URL || "redis://127.0.0.1:6379",
+  url: REDIS_URL,
   retry_strategy: options => {
     if (options.error && options.error.code === "ECONNREFUSED") {
       console.error("Redis connection failed", "Server refused the connection");
