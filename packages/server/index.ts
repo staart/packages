@@ -2,7 +2,7 @@ import { config } from "dotenv";
 import helmet from "helmet";
 import cors from "cors";
 import responseTime from "response-time";
-import { json, urlencoded } from "body-parser";
+import { json, urlencoded, raw } from "body-parser";
 
 config();
 
@@ -24,6 +24,7 @@ export const setupMiddleware = (app: any) => {
       )
     );
   if (!process.env.DISABLE_RESPONSE_TIME) app.use(responseTime());
+  app.use(raw());
   app.use(urlencoded({ extended: true }));
   app.use(json({ limit: "50mb" }));
 };
