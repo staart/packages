@@ -1,7 +1,7 @@
 import { config } from "dotenv";
 import anonymize from "ip-anonymize";
 import Hashids from "hashids/cjs";
-import slugify from "slugify";
+import slugifyString from "slugify";
 import cryptoRandomString from "crypto-random-string";
 
 config();
@@ -38,8 +38,17 @@ export const hashIdToId = (id: string | number): string => {
   return id;
 };
 
+export const slugify = (
+  name: string,
+  options?: {
+    replacement?: string;
+    remove?: RegExp;
+    lower?: boolean;
+  }
+) => slugifyString(name, options || { lower: true });
+
 export const createSlug = (name: string) =>
-  `${slugify(name, {
+  `${slugifyString(name, {
     lower: true
   }).replace(/'|"/g, "")}-${cryptoRandomString({ length: 5 })}`;
 
