@@ -22,6 +22,10 @@ export const REVOKED_TOKEN = `${UNAUTHORIZED}/revoked-token`;
 export const INVALID_TOKEN = `${UNAUTHORIZED}/invalid-token`;
 export const EXPIRED_TOKEN = `${UNAUTHORIZED}/expired-token`;
 
+// Stripe webhook signature
+export const MISSING_SIGNATURE = `${UNPROCESSABLE_ENTITY}/missing-signature`;
+export const INVALID_SIGNATURE = `${UNAUTHORIZED}/invalid-signature`;
+
 // Invalid user inputs
 export const INVALID_INPUT = `${UNPROCESSABLE_ENTITY}/invalid-input`;
 export const MISSING_PRIMARY_EMAIL = `${UNPROCESSABLE_ENTITY}/missing-primary-email`;
