@@ -6,11 +6,24 @@ config();
 
 const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || "";
 const STRIPE_PRODUCT_ID = process.env.STRIPE_PRODUCT_ID || "";
+const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 
 const stripe = new Stripe(STRIPE_SECRET_KEY, {
   apiVersion: "2019-12-03",
   typescript: true
 });
+
+/**
+ * Construct a Stripe webhook event
+ * @param body - Raw request.body
+ * @param signature - Received signature in header
+ */
+export const constructWebhookEvent = (
+  body: string | Buffer,
+  signature: string
+) => {
+  return stripe.webhooks.constructEvent(body, signature, STRIPE_WEBHOOK_SECRET);
+};
 
 const cleanStripeResponse = (response: Stripe.ApiList<any>) => {
   const newResponse = { ...response } as any;
