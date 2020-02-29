@@ -12,7 +12,7 @@ const host = parsedUrl.hostname || "127.0.0.1";
 const port = Number(parsedUrl.port || 6379);
 const password = parsedUrl.password
   ? decodeURIComponent(parsedUrl.password)
-  : null;
+  : undefined;
 
 export const redisQueue: RedisSMQ = new (RedisSMQ as any)({
   host,
