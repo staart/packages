@@ -18,6 +18,7 @@ export default class Check extends Command {
       )
     ).data;
     const v = yourPkg["staart-version"];
+    if (!v) return;
     if (versionToNum(v) < versionToNum(pkg.version)) {
       this.log("Most recent version is", pkg.version);
       this.log("Your version is", v);
