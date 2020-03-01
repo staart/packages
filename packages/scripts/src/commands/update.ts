@@ -1,23 +1,24 @@
 import { Command } from "@oclif/command";
 import { which, exec } from "shelljs";
 
-export default class Hello extends Command {
-  static description = "describe the command here";
+export default class Update extends Command {
+  static description = "update this app from the staart repo";
 
   static examples = [
-    `$ staart hello
-hello world from ./src/hello.ts!
+    `$ staart update api
+Updating Staart...
 `
   ];
 
   static args = [{ name: "repo" }];
 
   async run() {
-    const { args } = this.parse(Hello);
+    const { args } = this.parse(Update);
     if (!args.repo)
       throw new Error("Provide repo name (e.g., staart update api)");
-    this.log("Starting Staart update...");
+    this.log("Updating Staart...");
     if (!which("git")) throw new Error(`"git" command is unavailable`);
     exec(`git pull https://github.com/staart/${args.repo}`);
+    this.log("Staart is updated");
   }
 }
