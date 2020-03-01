@@ -5,6 +5,8 @@ import responseTime from "response-time";
 import { json, urlencoded } from "body-parser";
 import { Request } from "express";
 import asyncHandler from "express-async-handler";
+import RateLimit from "express-rate-limit";
+import slowDown from "express-slow-down";
 
 export interface RawRequest extends Request {
   rawBody: string;
@@ -13,7 +15,8 @@ export interface RawRequest extends Request {
 config();
 
 export * from "@overnightjs/core";
-export { asyncHandler };
+export { asyncHandler, slowDown, RateLimit };
+export { Request, Response, NextFunction, RequestHandler } from "express";
 
 export const setupMiddleware = (app: any) => {
   if (!process.env.DISALLOW_OPEN_CORS)
