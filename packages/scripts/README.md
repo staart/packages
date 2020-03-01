@@ -28,12 +28,29 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`staart build [FILE]`](#staart-build-file)
 * [`staart check`](#staart-check)
 * [`staart controllers`](#staart-controllers)
 * [`staart help [COMMAND]`](#staart-help-command)
 * [`staart increment`](#staart-increment)
 * [`staart launch`](#staart-launch)
 * [`staart update [REPO]`](#staart-update-repo)
+
+## `staart build [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ staart build [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/build.ts](https://github.com/staart/packages/blob/v1.0.1/src/commands/build.ts)_
 
 ## `staart check`
 
