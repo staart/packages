@@ -10,11 +10,13 @@
     "@oclif/command": "^1.5.19",
     "@oclif/config": "^1.14.0",
     "@oclif/plugin-help": "^2.2.3",
+    "shelljs": "^0.8.3",
     "tslib": "^1.11.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
     "@types/node": "^10.17.17",
+    "@types/shelljs": "^0.8.6",
     "globby": "^10.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"

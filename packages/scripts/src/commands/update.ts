@@ -1,4 +1,5 @@
 import { Command } from "@oclif/command";
+import shelljs from "shelljs";
 
 export default class Hello extends Command {
   static description = "describe the command here";
