@@ -1,5 +1,5 @@
 import { Command } from "@oclif/command";
-import shelljs from "shelljs";
+import { which, exec } from "shelljs";
 
 export default class Hello extends Command {
   static description = "describe the command here";
@@ -17,5 +17,7 @@ hello world from ./src/hello.ts!
     if (!args.repo)
       throw new Error("Provide repo name (e.g., staart update api)");
     this.log("Starting Staart update...");
+    if (!which("git")) throw new Error(`"git" command is unavailable`);
+    exec(`git pull https://github.com/staart/${args.repo}`);
   }
 }
