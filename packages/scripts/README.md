@@ -28,9 +28,21 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
+* [`staart check`](#staart-check)
 * [`staart help [COMMAND]`](#staart-help-command)
 * [`staart launch`](#staart-launch)
 * [`staart update [REPO]`](#staart-update-repo)
+
+## `staart check`
+
+check for Staart updates
+
+```
+USAGE
+  $ staart check
+```
+
+_See code: [src/commands/check.ts](https://github.com/staart/packages/blob/v1.0.0/src/commands/check.ts)_
 
 ## `staart help [COMMAND]`
 
