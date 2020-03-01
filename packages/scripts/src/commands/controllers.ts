@@ -8,7 +8,10 @@ import { config } from "dotenv";
 config();
 
 const SRC = join("src");
-let server = readFileSync(join(SRC, "server.ts")).toString();
+let server = "";
+try {
+  server = readFileSync(join(SRC, "server.ts")).toString();
+} catch (error) {}
 
 const generateControllers = async () => {
   const controllers = (await recursive(join(SRC, "controllers"))).map(

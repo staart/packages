@@ -29,7 +29,7 @@ USAGE
 # Commands
 <!-- commands -->
 * [`staart check`](#staart-check)
-* [`staart controllers [FILE]`](#staart-controllers-file)
+* [`staart controllers`](#staart-controllers)
 * [`staart help [COMMAND]`](#staart-help-command)
 * [`staart increment`](#staart-increment)
 * [`staart launch`](#staart-launch)
@@ -46,18 +46,13 @@ USAGE
 
 _See code: [src/commands/check.ts](https://github.com/staart/packages/blob/v1.0.1/src/commands/check.ts)_
 
-## `staart controllers [FILE]`
+## `staart controllers`
 
-describe the command here
+setup Staart API app controller
 
 ```
 USAGE
-  $ staart controllers [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  $ staart controllers
 ```
 
 _See code: [src/commands/controllers.ts](https://github.com/staart/packages/blob/v1.0.1/src/commands/controllers.ts)_
