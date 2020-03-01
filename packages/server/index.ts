@@ -11,6 +11,8 @@ export interface RawRequest extends Request {
 
 config();
 
+export * from "@overnightjs/core";
+
 export const setupMiddleware = (app: any) => {
   if (!process.env.DISALLOW_OPEN_CORS)
     app.use(
