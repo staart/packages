@@ -1,6 +1,6 @@
 {
   "name": "@staart/scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Anand Chowdhary @AnandChowdhary",
   "bin": {
     "staart": "./bin/run"
@@ -54,5 +54,6 @@
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "staart-version": "1.0.1"
 }

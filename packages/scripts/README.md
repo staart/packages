@@ -30,6 +30,7 @@ USAGE
 <!-- commands -->
 * [`staart check`](#staart-check)
 * [`staart help [COMMAND]`](#staart-help-command)
+* [`staart increment`](#staart-increment)
 * [`staart launch`](#staart-launch)
 * [`staart update [REPO]`](#staart-update-repo)
 
@@ -60,6 +61,17 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `staart increment`
+
+increment the package.json version
+
+```
+USAGE
+  $ staart increment
+```
+
+_See code: [src/commands/increment.ts](https://github.com/staart/packages/blob/v1.0.0/src/commands/increment.ts)_
 
 ## `staart launch`
 
