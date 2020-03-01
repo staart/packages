@@ -10,17 +10,22 @@
     "@oclif/command": "^1.5.19",
     "@oclif/config": "^1.14.0",
     "@oclif/plugin-help": "^2.2.3",
+    "@staart/errors": "^2.1.0",
     "axios": "^0.19.2",
     "fs-extra": "^8.1.0",
+    "recursive-readdir": "^2.2.2",
     "shelljs": "^0.8.3",
-    "tslib": "^1.11.1"
+    "tslib": "^1.11.1",
+    "yaml": "^1.7.2"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1.22.2",
     "@types/axios": "^0.14.0",
     "@types/fs-extra": "^8.1.0",
     "@types/node": "^10.17.17",
+    "@types/recursive-readdir": "^2.2.0",
     "@types/shelljs": "^0.8.6",
+    "@types/yaml": "^1.2.0",
     "globby": "^10.0.2",
     "ts-node": "^8.6.2",
     "typescript": "^3.8.3"
