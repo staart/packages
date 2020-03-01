@@ -4,6 +4,7 @@ import cors from "cors";
 import responseTime from "response-time";
 import { json, urlencoded } from "body-parser";
 import { Request } from "express";
+import asyncHandler from "express-async-handler";
 
 export interface RawRequest extends Request {
   rawBody: string;
@@ -12,6 +13,7 @@ export interface RawRequest extends Request {
 config();
 
 export * from "@overnightjs/core";
+export { asyncHandler };
 
 export const setupMiddleware = (app: any) => {
   if (!process.env.DISALLOW_OPEN_CORS)

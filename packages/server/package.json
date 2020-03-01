@@ -25,6 +25,7 @@
     "@types/response-time": "^2.3.4",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "express-async-handler": "^1.1.4",
     "helmet": "^3.21.3",
     "response-time": "^2.3.2"
   },
