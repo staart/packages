@@ -28,26 +28,22 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`staart build [FILE]`](#staart-build-file)
+* [`staart build`](#staart-build)
 * [`staart check`](#staart-check)
 * [`staart controllers`](#staart-controllers)
+* [`staart docs [FILE]`](#staart-docs-file)
 * [`staart help [COMMAND]`](#staart-help-command)
 * [`staart increment`](#staart-increment)
 * [`staart launch`](#staart-launch)
 * [`staart update [REPO]`](#staart-update-repo)
 
-## `staart build [FILE]`
+## `staart build`
 
-describe the command here
+build your Staart API app
 
 ```
 USAGE
-  $ staart build [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
+  $ staart build
 ```
 
 _See code: [src/commands/build.ts](https://github.com/staart/packages/blob/v1.0.1/src/commands/build.ts)_
@@ -73,6 +69,22 @@ USAGE
 ```
 
 _See code: [src/commands/controllers.ts](https://github.com/staart/packages/blob/v1.0.1/src/commands/controllers.ts)_
+
+## `staart docs [FILE]`
+
+describe the command here
+
+```
+USAGE
+  $ staart docs [FILE]
+
+OPTIONS
+  -f, --force
+  -h, --help       show CLI help
+  -n, --name=name  name to print
+```
+
+_See code: [src/commands/docs.ts](https://github.com/staart/packages/blob/v1.0.1/src/commands/docs.ts)_
 
 ## `staart help [COMMAND]`
 
