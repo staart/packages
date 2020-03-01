@@ -28,28 +28,9 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`staart hello [FILE]`](#staart-hello-file)
 * [`staart help [COMMAND]`](#staart-help-command)
-
-## `staart hello [FILE]`
-
-describe the command here
-
-```
-USAGE
-  $ staart hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ staart hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/staart/packages/blob/v1.0.0/src/commands/hello.ts)_
+* [`staart launch`](#staart-launch)
+* [`staart update [REPO]`](#staart-update-repo)
 
 ## `staart help [COMMAND]`
 
@@ -67,4 +48,30 @@ OPTIONS
 ```
 
 _See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+
+## `staart launch`
+
+launch the Staart API app
+
+```
+USAGE
+  $ staart launch
+```
+
+_See code: [src/commands/launch.ts](https://github.com/staart/packages/blob/v1.0.0/src/commands/launch.ts)_
+
+## `staart update [REPO]`
+
+update this app from the staart repo
+
+```
+USAGE
+  $ staart update [REPO]
+
+EXAMPLE
+  $ staart update api
+  Updating Staart...
+```
+
+_See code: [src/commands/update.ts](https://github.com/staart/packages/blob/v1.0.0/src/commands/update.ts)_
 <!-- commandsstop -->
