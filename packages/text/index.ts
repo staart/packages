@@ -3,8 +3,23 @@ import anonymize from "ip-anonymize";
 import Hashids from "hashids/cjs";
 import slugifyString from "slugify";
 import cryptoRandomString from "crypto-random-string";
+import ms from "ms";
+import ipRangeCheck from "ip-range-check";
 
 config();
+
+export { ms, ipRangeCheck };
+export { isMatch } from "matcher";
+export {
+  setRandomFallback,
+  genSalt,
+  hash,
+  compare,
+  getRounds,
+  getSalt,
+  encodeBase64,
+  decodeBase64
+} from "bcryptjs";
 
 const HASH_IDS = process.env.HASH_IDS || "";
 const HASH_ID_PREFIX = process.env.HASH_ID_PREFIX || "";
