@@ -1,5 +1,5 @@
 import { Command } from "@oclif/command";
-import { join } from "path";
+import { join, resolve } from "path";
 import { readFileSync, readdirSync, writeFile } from "fs-extra";
 import recursive from "recursive-readdir";
 import { success, pending } from "@staart/errors";
@@ -7,7 +7,7 @@ import { parse } from "yaml";
 import { config } from "dotenv";
 config();
 
-const SRC = join("src");
+const SRC = resolve(join("src"));
 let server = "";
 try {
   server = readFileSync(join(SRC, "server.ts")).toString();
