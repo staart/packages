@@ -7,7 +7,7 @@ import { parse } from "yaml";
 import { config } from "dotenv";
 config();
 
-const SRC = resolve(join(".staart"));
+const SRC = resolve(join(".staart", "src"));
 let server = "";
 try {
   server = readFileSync(join(SRC, "server.ts")).toString();
