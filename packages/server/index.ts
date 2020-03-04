@@ -3,8 +3,7 @@ import helmet from "helmet";
 import cors from "cors";
 import responseTime from "response-time";
 import { json, urlencoded } from "body-parser";
-import { Request, Response } from "express";
-import asyncHandler from "express-async-handler";
+import { Request, Response, NextFunction } from "express";
 import RateLimit from "express-rate-limit";
 import slowDown from "express-slow-down";
 
@@ -15,22 +14,33 @@ export interface RawRequest extends Request {
 config();
 
 export * from "@overnightjs/core";
-export { asyncHandler, slowDown, RateLimit };
+export { slowDown, RateLimit };
 export { Request, Response, NextFunction, RequestHandler } from "express";
 
 export const jsonAsyncResponse = async (
-  method: (req: Request, res: Response) => Promise<any>
+  method: (req: Request, res: Response, next: NextFunction) => Promise<any>
 ) => {
-  return async (req: Request, res: Response): Promise<Response> => {
+  return async (
+    req: Request,
+    res: Response,
+    next: NextFunction
+  ): Promise<Response | void> => {
     try {
-      const result = await method(req, res);
+      const result = await method(req, res, next);
       return res.status(200).json(result);
     } catch (error) {
       console.log(error);
-      return res.status(500).json({ error: "some error occurred" });
+      return next(error);
     }
   };
 };
+
+const asyncUtil = fn =>
+  function asyncUtilWrap(...args) {
+    const fnReturn = fn(...args);
+    const next = args[args.length - 1];
+    return Promise.resolve(fnReturn).catch(next);
+  };
 
 export const setupMiddleware = (app: any) => {
   if (!process.env.DISALLOW_OPEN_CORS)
