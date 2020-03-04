@@ -6,8 +6,9 @@ export default class Build extends Command {
 
   async run() {
     touch(".env");
-    mkdir("-p", "dist");
-    cp(".env", "dist/.env");
+    mkdir("-p", ".staart");
+    cp(".env", ".staart/.env");
+    cp("-r", "src", ".staart");
     exec("staart controllers");
     exec("tsc");
   }
