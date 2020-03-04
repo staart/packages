@@ -24,7 +24,28 @@ export const jsonAsyncResponse = (fn: RequestHandler) =>
     next: NextFunction
   ) {
     const fnReturn = fn(request, response, next);
-    return Promise.resolve(fnReturn).catch(next);
+    Promise.resolve(fnReturn)
+      .then(result => {
+        /**
+         * You can resolve your controller method with:
+         * (1) res.json(), it will return `undefined`
+         * (2) return res.json(), it will return `Response`
+         * (3) return {}, it will be a general object
+         *
+         * To handle (3), make sure res.sendFile is not a method
+         */
+        if (
+          typeof result === "object" &&
+          typeof result.sendFile === "undefined"
+        ) {
+          if (result.statusCode) {
+            response.status(result.statusCode);
+            delete result.statusCode;
+          }
+          response.json(result);
+        }
+      })
+      .catch(next);
   };
 
 export const setupMiddleware = (app: any) => {
