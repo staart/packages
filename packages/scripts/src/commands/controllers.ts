@@ -14,9 +14,9 @@ try {
 } catch (error) {}
 
 const generateControllers = async () => {
-  const controllers = (await recursive(join(SRC, "controllers"))).map(
-    file => file.split(join(SRC, "controllers").toString())[1]
-  );
+  const controllers = (await recursive(join(SRC, "controllers")))
+    .map(file => file.split(join(SRC, "controllers").toString())[1])
+    .filter(file => file.endsWith("index.ts"));
   const exportName: string[] = [];
   const generatedName: string[] = [];
   controllers.forEach((controller, index) => {
