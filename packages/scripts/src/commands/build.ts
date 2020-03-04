@@ -9,6 +9,7 @@ export default class Build extends Command {
     mkdir("-p", ".staart");
     cp(".env", ".staart/.env");
     cp("-r", "src", ".staart");
+    cp("-r", "static", ".staart");
     exec("staart controllers");
     exec("tsc");
   }
