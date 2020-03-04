@@ -26,8 +26,6 @@ export const getText = (message: string, lang = "en") => {
 };
 
 export const respond = (
-  req: any,
-  res: any,
   message: string,
   data?: { [index: string]: string }
 ) => {
@@ -47,11 +45,9 @@ export const respond = (
     code,
     success,
     message: messageWithoutCode,
-    text: ucFirst(
-      m(getText(message, req.params.lang), { resource: "resource", ...data })
-    )
+    text: ucFirst(m(getText(message, "en"), { resource: "resource", ...data }))
   };
-  return res.status(code).json(resultObject);
+  return resultObject;
 };
 
 export * from "./messages";

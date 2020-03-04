@@ -38,9 +38,9 @@ export const jsonAsyncResponse = (fn: RequestHandler) =>
           typeof result === "object" &&
           typeof result.sendFile === "undefined"
         ) {
-          if (result.statusCode) {
-            response.status(result.statusCode);
-            delete result.statusCode;
+          if (result.status) {
+            response.status(result.status);
+            delete result.status;
           }
           response.json(result);
         }
