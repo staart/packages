@@ -22,7 +22,7 @@ export default class Build extends Command {
 
     // See https://github.com/microsoft/TypeScript/issues/27379
     exec(
-      "tsc --moduleResolution node --target es6 --module commonjs --lib esnext --lib dom --strict true --sourceMap true --declaration true --esModuleInterop true --allowSyntheticDefaultImports true --experimentalDecorators true --resolveJsonModule true --emitDecoratorMetadata true --declarationDir ./dist --outDir ./dist --typeRoots src/@types --typeRoots node_modules/@types .staart/src/**/*.ts"
+      "tsc --moduleResolution node --target es6 --module commonjs --lib esnext --lib dom --strict true --sourceMap true --declaration true --esModuleInterop true --allowSyntheticDefaultImports true --experimentalDecorators true --resolveJsonModule true --emitDecoratorMetadata true --declarationDir ./dist --outDir ./dist --typeRoots src/@types --typeRoots node_modules/@types .staart/**/*.ts"
     );
   }
 }
