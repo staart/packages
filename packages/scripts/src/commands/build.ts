@@ -10,6 +10,7 @@ export default class Build extends Command {
     cp(".env", ".staart/.env");
     cp("-r", "src", ".staart");
     cp("-r", "static", ".staart");
+    cp("package.json", ".staart");
     exec("staart controllers");
     exec("tsc");
   }
