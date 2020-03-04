@@ -3,7 +3,7 @@ import helmet from "helmet";
 import cors from "cors";
 import responseTime from "response-time";
 import { json, urlencoded } from "body-parser";
-import { Request, Response, NextFunction } from "express";
+import { Request, Response, NextFunction, RequestHandler } from "express";
 import RateLimit from "express-rate-limit";
 import slowDown from "express-slow-down";
 
@@ -17,28 +17,13 @@ export * from "@overnightjs/core";
 export { slowDown, RateLimit };
 export { Request, Response, NextFunction, RequestHandler } from "express";
 
-export const jsonAsyncResponse = async (
-  method: (req: Request, res: Response, next: NextFunction) => Promise<any>
-) => {
-  return async (
-    req: Request,
-    res: Response,
+export const jsonAsyncResponse = (fn: RequestHandler) =>
+  function asyncUtilWrap(
+    request: Request,
+    response: Response,
     next: NextFunction
-  ): Promise<Response | void> => {
-    try {
-      const result = await method(req, res, next);
-      return res.status(200).json(result);
-    } catch (error) {
-      console.log(error);
-      return next(error);
-    }
-  };
-};
-
-const asyncUtil = fn =>
-  function asyncUtilWrap(...args) {
-    const fnReturn = fn(...args);
-    const next = args[args.length - 1];
+  ) {
+    const fnReturn = fn(request, response, next);
     return Promise.resolve(fnReturn).catch(next);
   };
 
