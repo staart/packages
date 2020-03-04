@@ -20,6 +20,8 @@ const generateControllers = async () => {
     server = `import { jsonAsyncResponse } from "@staart/server";\n` + server;
   if (!server.includes("ClassWrapper"))
     server = `import { ClassWrapper } from "@staart/server";\n` + server;
+  if (!server.includes("ChildControllers"))
+    server = `import { ChildControllers } from "@staart/server";\n` + server;
 
   const controllers = (await recursive(join(SRC, "controllers")))
     .map(file => file.split(join(SRC, "controllers").toString())[1])
@@ -46,7 +48,7 @@ const generateControllers = async () => {
 
   const insertCode = `
     @ClassWrapper(jsonAsyncResponse)
-    @ChildControllers([${generatedName.map(e => `new ${e}()`).join(", ")}]);
+    @ChildControllers([${generatedName.map(e => `new ${e}()`).join(", ")}])
     class RootController
   `;
   server = importCode + server.replace("class RootController", insertCode);
