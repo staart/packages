@@ -45,6 +45,9 @@ const updateControllerCode = async () => {
     const hasClassWrapper = oneController.findIndex(line =>
       line.includes("ClassWrapper")
     );
+    const hasClassOptions = oneController.findIndex(line =>
+      line.includes("ClassOptions")
+    );
 
     if (hasjsonAsyncResponse === -1) {
       oneController = insert(
@@ -62,13 +65,21 @@ const updateControllerCode = async () => {
       );
     }
 
+    if (hasClassOptions === -1) {
+      oneController = insert(
+        oneController,
+        0,
+        `import { ClassOptions } from "@staart/server";`
+      );
+    }
+
     const controllerIndex = oneController.findIndex(line =>
       line.startsWith("@Controller")
     );
     oneController = insert(
       oneController,
       controllerIndex + 1,
-      `@ClassWrapper(jsonAsyncResponse)`
+      `@ClassWrapper(jsonAsyncResponse)\n@ClassOptions({ mergeParams: true })`
     );
 
     await writeFile(controller, oneController.join("\n"));
