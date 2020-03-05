@@ -277,3 +277,130 @@ export const updateSource = async (id: string, cardId: string, data: any) => {
   await stripe.customers.updateSource(id, cardId, data);
   return { success: true, message: "billing-source-updated" };
 };
+
+/**
+ * Get all coupons
+ */
+export const getCoupons = async ({
+  start,
+  itemsPerPage
+}: {
+  start?: string;
+  itemsPerPage?: number;
+}) => {
+  return cleanStripeResponse(
+    await stripe.coupons.list({
+      starting_after: start !== "0" ? start : undefined,
+      limit: itemsPerPage
+    })
+  );
+};
+
+/**
+ * Get a coupon
+ * @param couponId - Coupon ID
+ */
+export const getCoupon = async (couponId: string) => {
+  return await stripe.coupons.retrieve(couponId);
+};
+
+/**
+ * Create a new coupon
+ * @param data - Coupon params
+ */
+export const createCoupon = async (data: Stripe.CouponCreateParams) => {
+  return await stripe.coupons.create(data);
+};
+
+/**
+ * Update a coupon
+ * @param couponId - Coupon ID
+ * @param data - New data for coupon
+ */
+export const updateCoupon = async (
+  couponId: string,
+  data: Stripe.CouponUpdateParams
+) => {
+  return await stripe.coupons.update(couponId, data);
+};
+
+/**
+ * Delete a coupon
+ * @param couponId - Coupon ID
+ */
+export const deleteCoupon = async (couponId: string) => {
+  return await stripe.coupons.del(couponId);
+};
+
+/**
+ * Get a list of balance transactions on a customer
+ * @param id - Customer ID
+ */
+export const getCustomBalanceTransactions = async (
+  id: string,
+  {
+    start,
+    itemsPerPage
+  }: {
+    start?: string;
+    itemsPerPage?: number;
+  }
+) => {
+  return await stripe.customers.listBalanceTransactions(id, {
+    starting_after: start !== "0" ? start : undefined,
+    limit: itemsPerPage
+  });
+};
+
+/**
+ * Get a list of balance transactions on a customer
+ * @param id - Customer ID
+ * @param transactionId - Transaction ID
+ */
+export const getCustomBalanceTransaction = async (
+  id: string,
+  transactionId: string
+) => {
+  return await stripe.customers.retrieveBalanceTransaction(id, transactionId);
+};
+
+/**
+ * Create a customer balance transaction
+ * @param id - Customer ID
+ * @param transactionId - Transaction ID
+ */
+export const createCustomerBalanceTransaction = async (
+  id: string,
+  {
+    amount,
+    currency,
+    description,
+    metadata
+  }: { amount: number; currency: string; description?: string; metadata?: any }
+) => {
+  return await stripe.customers.createBalanceTransaction(id, {
+    amount,
+    currency,
+    description,
+    metadata
+  });
+};
+
+/**
+ * Update a customer balance transaction
+ * @param id - Customer ID
+ * @param transactionId - Transaction ID
+ */
+export const updateCustomerBalanceTransaction = async (
+  id: string,
+  transactionId: string,
+  {
+    description,
+    metadata
+  }: { amount: number; currency: string; description?: string; metadata?: any }
+) => {
+  return await stripe.customers.updateBalanceTransaction(id, transactionId, {
+    description,
+    metadata
+  });
+};
