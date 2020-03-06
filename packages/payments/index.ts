@@ -9,7 +9,7 @@ const STRIPE_PRODUCT_ID = process.env.STRIPE_PRODUCT_ID || "";
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 
 const stripe = new Stripe(STRIPE_SECRET_KEY, {
-  apiVersion: "2019-12-03",
+  apiVersion: "2020-03-02",
   typescript: true
 });
 
