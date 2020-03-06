@@ -60,7 +60,7 @@ export const slugify = (
     remove?: RegExp;
     lower?: boolean;
   }
-) => slugifyString(name, options || { lower: true });
+) => slugifyString(name, options || { lower: true, strict: true });
 
 export const createSlug = (name: string) =>
   `${slugifyString(name, {
