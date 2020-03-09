@@ -1,6 +1,6 @@
 {
   "name": "@staart/scripts",
-  "version": "1.10.12",
+  "version": "1.10.13",
   "author": "Anand Chowdhary @AnandChowdhary",
   "bin": {
     "staart": "./bin/run"

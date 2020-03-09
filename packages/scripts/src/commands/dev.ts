@@ -30,14 +30,16 @@ export default class Dev extends Command {
       cp("package.json", ".staart");
       exec("staart controllers");
       exec("staart build-babel");
-      pending("Relaunching app...");
       kill(PID);
-      exec("sleep 1");
-      const newProcess = child_process.exec(
-        "node dist/src/__staart.js",
-        (err, stdout) => console.log(stdout)
-      );
-      PID = newProcess.pid;
+      success("Stopped app");
+      setTimeout(() => {
+        pending("Launching app...");
+        const newProcess = child_process.exec(
+          "node dist/src/__staart.js",
+          (err, stdout) => console.log(stdout)
+        );
+        PID = newProcess.pid;
+      }, 1000);
     });
   }
 }
