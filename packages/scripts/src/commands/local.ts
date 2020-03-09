@@ -23,9 +23,10 @@ export default class Local extends Command {
         }
       `
     );
+    exec("nodemon --delay 10 ../dist/src/__staart.js", { async: true });
     cd(".staart");
     exec(
-      'concurrently \'nodemon --delay 10 ../dist/src/__staart.js\' \'onchange "../src/**/*.ts" "../static/**/*" -- babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline\''
+      'onchange "../src/**/*.ts" "../static/**/*" -- babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline'
     );
     cd("../");
   }
