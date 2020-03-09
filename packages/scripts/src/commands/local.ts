@@ -2,6 +2,7 @@ import { Command } from "@oclif/command";
 import { exec, cd } from "shelljs";
 import { join, resolve } from "path";
 import { writeFile } from "fs-extra";
+import { success } from "@staart/errors";
 
 const DIR = resolve(join(".staart"));
 
@@ -10,6 +11,7 @@ export default class Local extends Command {
 
   async run() {
     exec("staart build");
+    success("Completed build process");
     await writeFile(
       join(DIR, ".babelrc"),
       `
@@ -23,7 +25,9 @@ export default class Local extends Command {
         }
       `
     );
-    exec("nodemon --delay 10 ../dist/src/__staart.js", { async: true });
+    success("Set up babel for transpiling");
+    exec("nodemon --delay 10 dist/src/__staart.js", { async: true });
+    success("Started local server");
     cd(".staart");
     exec(
       'onchange "../src/**/*.ts" "../static/**/*" -- babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline'
