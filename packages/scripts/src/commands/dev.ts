@@ -1,7 +1,7 @@
 import { Command } from "@oclif/command";
-import { exec, cd, touch, mkdir, cp } from "shelljs";
+import { exec, touch, mkdir, cp } from "shelljs";
 import { success, pending } from "@staart/errors";
-import { watch } from "fs-extra";
+import watch from "node-watch";
 import { join } from "path";
 import child_process from "child_process";
 
@@ -16,8 +16,7 @@ export default class Dev extends Command {
       "node dist/src/__staart.js",
       (err, stdout) => console.log(stdout)
     );
-    const sourceFilesWatcher = watch(join("src"));
-    sourceFilesWatcher.on("change", () => {
+    watch(join("src"), { recursive: true }, () => {
       pending("Rebuilding app...");
       touch(".env");
       mkdir("-p", ".staart");
@@ -28,8 +27,7 @@ export default class Dev extends Command {
       exec("staart controllers");
       exec("staart build-babel");
     });
-    const distFilesWatcher = watch(join("dist"));
-    distFilesWatcher.on("change", () => {
+    watch(join("dist"), { recursive: true, delay: 1000 }, () => {
       pending("Relaunching app...");
       nodeProcess.kill();
       nodeProcess = child_process.exec(
