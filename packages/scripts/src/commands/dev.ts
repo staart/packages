@@ -36,10 +36,10 @@ export default class Dev extends Command {
         pending("Launching app...");
         const newProcess = child_process.exec(
           "node dist/src/__staart.js",
-          (err, stdout) => console.log(stdout)
+          (err, stdout) => (err ? console.log(err) : console.log(stdout))
         );
         PID = newProcess.pid;
-      }, 1000);
+      }, 2500);
     });
   }
 }
