@@ -128,6 +128,7 @@ const writeServerFile = async () => {
     join(SRC, "__staart.ts"),
     `
   import regeneratorRuntime from "regenerator-runtime";
+  import "@babel/polyfill";
   import { Staart } from "./app";
   import { PORT, SENTRY_DSN } from "./config";
   import { init } from "@sentry/node";
