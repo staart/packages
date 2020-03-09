@@ -1,14 +1,15 @@
 import { Command } from "@oclif/command";
-import { exec, cd, rm } from "shelljs";
+import { exec, cd } from "shelljs";
 import { join, resolve } from "path";
 import { writeFile } from "fs-extra";
 
 const DIR = resolve(join(".staart"));
 
-export default class QuickBuild extends Command {
+export default class Local extends Command {
   static description = "build your Staart API app";
 
   async run() {
+    exec("staart build");
     await writeFile(
       join(DIR, ".babelrc"),
       `
@@ -24,7 +25,7 @@ export default class QuickBuild extends Command {
     );
     cd(".staart");
     exec(
-      'babel src --out-dir ../dist --extensions ".ts,.tsx" --source-maps inline'
+      "concurrently 'nodemon --delay 10 ../dist/src/__staart.js' 'babel src --out-dir ../dist/src --extensions \".ts,.tsx\" --source-maps inline'"
     );
     cd("../");
   }

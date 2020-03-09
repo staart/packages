@@ -1,6 +1,6 @@
 {
   "name": "@staart/scripts",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "author": "Anand Chowdhary @AnandChowdhary",
   "bin": {
     "staart": "./bin/run"
@@ -18,8 +18,10 @@
     "@oclif/plugin-help": "^2.2.3",
     "@staart/errors": "^2.1.0",
     "axios": "^0.19.2",
+    "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
     "fs-extra": "^8.1.0",
+    "nodemon": "^2.0.2",
     "recursive-readdir": "^2.2.2",
     "shelljs": "^0.8.3",
     "tslib": "^1.11.1",
