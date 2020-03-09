@@ -4,7 +4,6 @@ import { join, resolve } from "path";
 import { writeFile } from "fs-extra";
 import { success, info } from "@staart/errors";
 import nodemon from "nodemon";
-import onchange from "onchange";
 
 const DIR = resolve(join(".staart"));
 
@@ -34,11 +33,8 @@ export default class Local extends Command {
       delay: 1000
     });
     cd(".staart");
-    onchange(
-      ["../src/**/*.ts", "../static/**/*"],
-      'babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline',
-      undefined,
-      {}
+    exec(
+      'onchange "../src/**/*.ts" "../static/**/*" --  echo "Rebuilding..." && babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline'
     );
     cd("../");
   }
