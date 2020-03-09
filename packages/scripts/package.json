@@ -1,6 +1,6 @@
 {
   "name": "@staart/scripts",
-  "version": "1.10.3",
+  "version": "1.10.4",
   "author": "Anand Chowdhary @AnandChowdhary",
   "bin": {
     "staart": "./bin/run"
@@ -34,6 +34,7 @@
     "@types/axios": "^0.14.0",
     "@types/fs-extra": "^8.1.0",
     "@types/node": "^10.17.17",
+    "@types/nodemon": "^1.19.0",
     "@types/recursive-readdir": "^2.2.0",
     "@types/shelljs": "^0.8.6",
     "@types/yaml": "^1.2.0",

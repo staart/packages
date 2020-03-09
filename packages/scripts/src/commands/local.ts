@@ -2,7 +2,9 @@ import { Command } from "@oclif/command";
 import { exec, cd } from "shelljs";
 import { join, resolve } from "path";
 import { writeFile } from "fs-extra";
-import { success } from "@staart/errors";
+import { success, info } from "@staart/errors";
+import nodemon from "nodemon";
+import onchange from "onchange";
 
 const DIR = resolve(join(".staart"));
 
@@ -26,12 +28,30 @@ export default class Local extends Command {
       `
     );
     success("Set up babel for transpiling");
-    exec("nodemon --delay 10 dist/src/__staart.js", { async: true });
-    success("Started local server");
+    nodemon({
+      script: "dist/src/__staart.js",
+      ext: "js json",
+      delay: 1000
+    });
     cd(".staart");
-    exec(
-      'onchange "../src/**/*.ts" "../static/**/*" -- babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline'
+    onchange(
+      ["../src/**/*.ts", "../static/**/*"],
+      'echo "Building..." && babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline',
+      undefined,
+      {}
     );
     cd("../");
   }
 }
+
+nodemon
+  .on("start", function() {
+    success("Started local server");
+  })
+  .on("quit", function() {
+    success("Stopped local server");
+    process.exit();
+  })
+  .on("restart", files => {
+    info("Restarted local server due to:", files);
+  });
