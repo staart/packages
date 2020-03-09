@@ -1,6 +1,6 @@
 {
   "name": "@staart/scripts",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "author": "Anand Chowdhary @AnandChowdhary",
   "bin": {
     "staart": "./bin/run"
@@ -22,6 +22,7 @@
     "dotenv": "^8.2.0",
     "fs-extra": "^8.1.0",
     "nodemon": "^2.0.2",
+    "onchange": "^6.1.0",
     "recursive-readdir": "^2.2.2",
     "shelljs": "^0.8.3",
     "tslib": "^1.11.1",
