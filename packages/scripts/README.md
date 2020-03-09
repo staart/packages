@@ -19,7 +19,7 @@ $ npm install -g @staart/scripts
 $ staart COMMAND
 running command...
 $ staart (-v|--version|version)
-@staart/scripts/1.10.8 darwin-x64 node-v13.7.0
+@staart/scripts/1.10.9 darwin-x64 node-v13.7.0
 $ staart --help [COMMAND]
 USAGE
   $ staart COMMAND
@@ -49,7 +49,7 @@ USAGE
   $ staart build
 ```
 
-_See code: [src/commands/build.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/build.ts)_
+_See code: [src/commands/build.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/build.ts)_
 
 ## `staart build-babel`
 
@@ -60,7 +60,7 @@ USAGE
   $ staart build-babel
 ```
 
-_See code: [src/commands/build-babel.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/build-babel.ts)_
+_See code: [src/commands/build-babel.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/build-babel.ts)_
 
 ## `staart check`
 
@@ -71,7 +71,7 @@ USAGE
   $ staart check
 ```
 
-_See code: [src/commands/check.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/check.ts)_
+_See code: [src/commands/check.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/check.ts)_
 
 ## `staart controllers`
 
@@ -82,7 +82,7 @@ USAGE
   $ staart controllers
 ```
 
-_See code: [src/commands/controllers.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/controllers.ts)_
+_See code: [src/commands/controllers.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/controllers.ts)_
 
 ## `staart dev`
 
@@ -93,7 +93,7 @@ USAGE
   $ staart dev
 ```
 
-_See code: [src/commands/dev.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/dev.ts)_
+_See code: [src/commands/dev.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/dev.ts)_
 
 ## `staart docs`
 
@@ -104,7 +104,7 @@ USAGE
   $ staart docs
 ```
 
-_See code: [src/commands/docs.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/docs.ts)_
+_See code: [src/commands/docs.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/docs.ts)_
 
 ## `staart help [COMMAND]`
 
@@ -132,7 +132,7 @@ USAGE
   $ staart increment
 ```
 
-_See code: [src/commands/increment.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/increment.ts)_
+_See code: [src/commands/increment.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/increment.ts)_
 
 ## `staart launch`
 
@@ -143,7 +143,7 @@ USAGE
   $ staart launch
 ```
 
-_See code: [src/commands/launch.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/launch.ts)_
+_See code: [src/commands/launch.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/launch.ts)_
 
 ## `staart start`
 
@@ -154,7 +154,7 @@ USAGE
   $ staart start
 ```
 
-_See code: [src/commands/start.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/start.ts)_
+_See code: [src/commands/start.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/start.ts)_
 
 ## `staart update [REPO]`
 
@@ -169,5 +169,5 @@ EXAMPLE
   Updating Staart...
 ```
 
-_See code: [src/commands/update.ts](https://github.com/staart/packages/blob/v1.10.8/src/commands/update.ts)_
+_See code: [src/commands/update.ts](https://github.com/staart/packages/blob/v1.10.9/src/commands/update.ts)_
 <!-- commandsstop -->
