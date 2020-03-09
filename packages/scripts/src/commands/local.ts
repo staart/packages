@@ -27,11 +27,7 @@ export default class Local extends Command {
       `
     );
     success("Set up babel for transpiling");
-    nodemon({
-      script: "dist/src/__staart.js",
-      ext: "js json",
-      delay: 1000
-    });
+    startNodemon();
     cd(".staart");
     exec(
       'onchange "../src/**/*.ts" "../static/**/*" --  echo "Rebuilding..." && babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline'
@@ -39,6 +35,16 @@ export default class Local extends Command {
     cd("../");
   }
 }
+
+const startNodemon = () =>
+  new Promise(resolve => {
+    resolve();
+    nodemon({
+      script: "dist/src/__staart.js",
+      ext: "js json",
+      delay: 1000
+    });
+  });
 
 nodemon
   .on("start", function() {
