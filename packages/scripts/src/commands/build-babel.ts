@@ -15,6 +15,7 @@ export default class BuildBabel extends Command {
         {
           "presets": ["@babel/env", "@babel/typescript"],
           "plugins": [
+            ["@babel/plugin-transform-runtime", { "useBuiltIns": "usage" }],
             ["@babel/plugin-proposal-decorators", { "legacy": true }],
             "@babel/proposal-class-properties",
             "@babel/plugin-proposal-object-rest-spread"
