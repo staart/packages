@@ -16,6 +16,7 @@ export default class Dev extends Command {
       "node dist/src/__staart.js",
       (err, stdout) => console.log(stdout)
     );
+    success("Launched app");
     watch(join("src"), { recursive: true }, () => {
       pending("Rebuilding app...");
       touch(".env");
@@ -26,8 +27,6 @@ export default class Dev extends Command {
       cp("package.json", ".staart");
       exec("staart controllers");
       exec("staart build-babel");
-    });
-    watch(join("dist"), { recursive: true, delay: 1000 }, () => {
       pending("Relaunching app...");
       nodeProcess.kill();
       nodeProcess = child_process.exec(
