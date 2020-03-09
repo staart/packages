@@ -36,7 +36,7 @@ export default class Local extends Command {
     cd(".staart");
     onchange(
       ["../src/**/*.ts", "../static/**/*"],
-      'echo "Building..." && babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline',
+      'babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline',
       undefined,
       {}
     );
