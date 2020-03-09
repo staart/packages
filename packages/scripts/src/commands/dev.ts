@@ -4,6 +4,7 @@ import { success, pending } from "@staart/errors";
 import watch from "node-watch";
 import { join } from "path";
 import child_process from "child_process";
+import kill from "tree-kill";
 
 export default class Dev extends Command {
   static description =
@@ -12,10 +13,12 @@ export default class Dev extends Command {
   async run() {
     exec("staart build");
     success("Completed build process");
-    let nodeProcess = child_process.exec(
+    let PID = 0;
+    const nodeProcess = child_process.exec(
       "node dist/src/__staart.js",
       (err, stdout) => console.log(stdout)
     );
+    PID = nodeProcess.pid;
     success("Launched app");
     watch(join("src"), { recursive: true }, () => {
       pending("Rebuilding app...");
@@ -28,11 +31,13 @@ export default class Dev extends Command {
       exec("staart controllers");
       exec("staart build-babel");
       pending("Relaunching app...");
-      nodeProcess.kill();
-      nodeProcess = child_process.exec(
+      kill(PID);
+      exec("sleep 1");
+      const newProcess = child_process.exec(
         "node dist/src/__staart.js",
         (err, stdout) => console.log(stdout)
       );
+      PID = newProcess.pid;
     });
   }
 }
