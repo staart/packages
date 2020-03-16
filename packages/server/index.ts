@@ -7,6 +7,8 @@ import { Request, Response, NextFunction, RequestHandler } from "express";
 import RateLimit from "express-rate-limit";
 import slowDown from "express-slow-down";
 
+const bool = (val?: string | boolean) => String(val).toLowerCase() === "true";
+
 export interface RawRequest extends Request {
   rawBody: string;
 }
@@ -49,7 +51,7 @@ export const jsonAsyncResponse = (fn: RequestHandler) =>
   };
 
 export const setupMiddleware = (app: any) => {
-  if (!process.env.DISALLOW_OPEN_CORS)
+  if (!bool(process.env.DISALLOW_OPEN_CORS))
     app.use(
       cors({
         maxAge: process.env.CORS_MAXAGE
@@ -57,7 +59,7 @@ export const setupMiddleware = (app: any) => {
           : 600
       })
     );
-  if (!process.env.DISABLE_HELMET)
+  if (!bool(process.env.DISABLE_HELMET))
     app.use(
       helmet(
         process.env.HELMET_CONFIG
@@ -65,7 +67,7 @@ export const setupMiddleware = (app: any) => {
           : { hsts: { maxAge: 31536000, preload: true } }
       )
     );
-  if (!process.env.DISABLE_RESPONSE_TIME) app.use(responseTime());
+  if (!bool(process.env.DISABLE_RESPONSE_TIME)) app.use(responseTime());
   app.use(urlencoded({ extended: true }));
   app.use(
     json({
