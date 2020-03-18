@@ -33,14 +33,24 @@ export const jsonAsyncResponse = (fn: RequestHandler) =>
          * (1) res.json(), it will return `undefined`
          * (2) return res.json(), it will return `Response`
          * (3) return {}, it will be a general object
+         * (4) return string/number/other primitive
          *
-         * To handle (3), make sure res.sendFile is not a method
+         * To handle (3) onwards, make sure res.sendFile is not a method
          */
         if (
-          typeof result === "object" &&
-          typeof result.sendFile === "undefined"
+          (typeof result === "object" &&
+            typeof result.sendFile === "undefined") ||
+          [
+            "boolean",
+            "number",
+            "string",
+            "null",
+            "undefined",
+            "bigint",
+            "symbol"
+          ].includes(typeof result)
         ) {
-          if (result.status) {
+          if (typeof result === "object" && result.status) {
             response.status(result.status);
             delete result.status;
           }
