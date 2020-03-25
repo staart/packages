@@ -1,6 +1,6 @@
 {
   "name": "@staart/scripts",
-  "version": "1.11.0",
+  "version": "1.12.0",
   "author": "Anand Chowdhary @AnandChowdhary",
   "bin": {
     "staart": "./bin/run"
@@ -22,6 +22,7 @@
     "axios": "^0.19.2",
     "concurrently": "^5.1.0",
     "dotenv": "^8.2.0",
+    "eject-dependencies": "^1.2.0",
     "fs-extra": "^8.1.0",
     "node-watch": "^0.6.3",
     "nodemon": "^2.0.2",
