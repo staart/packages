@@ -1,7 +1,7 @@
 import { Command } from "@oclif/command";
 import { exec, touch, mkdir, cp } from "shelljs";
 import { join, resolve } from "path";
-import { readFile, writeFile } from "fs-extra";
+import { readFile, writeFile, readJson } from "fs-extra";
 import recursive from "recursive-readdir";
 import { success } from "@staart/errors";
 
@@ -11,7 +11,25 @@ export default class Build extends Command {
   static description = "build your Staart API app";
 
   async run() {
+    let staartRc: any = {};
+    try {
+      staartRc = await readJson(join(".", ".staartrc"));
+    } catch (error) {}
+
     touch(".env");
+    let env = await readFile(".env", "utf8");
+    Object.keys(staartRc.env || {}).forEach(i => {
+      env += `${i} = ${staartRc.env[i]}`;
+    });
+    await writeFile(".env", env);
+
+    touch("static/robots.txt");
+    let robots = await readFile("static/robots.txt", "utf8");
+    (staartRc.robots || []).forEach((i: string) => {
+      robots += `${i} = ${staartRc.robots[i]}`;
+    });
+    await writeFile("static/robots.txt", robots);
+
     mkdir("-p", ".staart");
     cp(".env", ".staart/.env");
     cp("-r", "src", ".staart");
@@ -20,9 +38,31 @@ export default class Build extends Command {
     await updateControllerCode();
     exec("staart controllers");
 
+    const typeScriptConfig = {
+      moduleResolution: "node ",
+      target: "es6 ",
+      module: "commonjs ",
+      strict: "true ",
+      sourceMap: "true ",
+      declaration: "true ",
+      esModuleInterop: "true ",
+      allowSyntheticDefaultImports: "true ",
+      experimentalDecorators: "true ",
+      resolveJsonModule: "true ",
+      emitDecoratorMetadata: "true ",
+      declarationDir: "./dist ",
+      outDir: "./dist",
+      ...(staartRc.tsconfig || {})
+    };
+
+    let tsString = "";
+    Object.keys(typeScriptConfig).forEach(key => {
+      tsString += `--${key} ${typeScriptConfig[key]}`;
+    });
+
     // See https://github.com/microsoft/TypeScript/issues/27379
     exec(
-      "tsc --moduleResolution node --target es6 --module commonjs --lib esnext --lib dom --strict true --sourceMap true --declaration true --esModuleInterop true --allowSyntheticDefaultImports true --experimentalDecorators true --resolveJsonModule true --emitDecoratorMetadata true --declarationDir ./dist --outDir ./dist --typeRoots ./src/@types --typeRoots node_modules/@types .staart/**/*.ts"
+      `tsc ${tsString} --lib esnext --lib dom --typeRoots ./src/@types --typeRoots node_modules/@types .staart/**/*.ts`
     );
   }
 }
