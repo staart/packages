@@ -6,6 +6,7 @@ export default class Eject extends Command {
 
   async run() {
     await eject({
+      destDir: "./src/staart-ejected",
       dependenciesFilter: dependencies => {
         return new Set(
           Array.from(dependencies).filter(dependency =>
