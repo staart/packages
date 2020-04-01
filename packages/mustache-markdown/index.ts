@@ -4,6 +4,14 @@ import marked, { MarkedOptions } from "marked";
 
 config();
 
+/**
+ * Renders a Mustache + Markdown string
+ * @param markdown - Markdown string
+ * @param view - The view to render the template with
+ * @param partials - object that contains the names and templates of partials that are used in a template
+ * @param tags - The tags to use
+ * @param options - Options for Marked markdown renderer
+ */
 export const render = (
   markdown: string,
   view: any,

@@ -19,6 +19,10 @@ export * from "@overnightjs/core";
 export { slowDown, RateLimit };
 export { Request, Response, NextFunction, RequestHandler } from "express";
 
+/**
+ * Send an Express HTTP response from a JSON object
+ * @param fn - Function to call for a response
+ */
 export const jsonAsyncResponse = (fn: RequestHandler) =>
   function asyncUtilWrap(
     request: Request,
@@ -60,6 +64,10 @@ export const jsonAsyncResponse = (fn: RequestHandler) =>
       .catch(next);
   };
 
+/**
+ * Setup required middleware in a Staart API app
+ * @param app - Express app instance
+ */
 export const setupMiddleware = (app: any) => {
   if (!bool(process.env.DISALLOW_OPEN_CORS))
     app.use(

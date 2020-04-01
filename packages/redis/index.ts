@@ -14,12 +14,18 @@ const password = parsedUrl.password
   ? decodeURIComponent(parsedUrl.password)
   : undefined;
 
+/**
+ * Redis queue for messages
+ */
 export const redisQueue: RedisSMQ = new (RedisSMQ as any)({
   host,
   port,
   password
 });
 
+/**
+ * Redis client
+ */
 const redis = createHandyClient({
   url: REDIS_URL,
   retry_strategy: options => {

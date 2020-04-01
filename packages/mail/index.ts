@@ -16,6 +16,9 @@ const SES_REGION = process.env.SES_REGION || "";
 
 let transporter: Transporter | undefined = undefined;
 
+/**
+ * Sets up a Nodemailer transporter to send emails
+ */
 export const setupTransporter = () => {
   if (SES_ACCESS && SES_SECRET) {
     transporter = createTransport({
@@ -39,6 +42,9 @@ export const setupTransporter = () => {
   }
 };
 
+/**
+ * Sends a test email
+ */
 export const sendTestEmail = () => {
   if (transporter)
     transporter
@@ -59,7 +65,8 @@ export interface Mail {
 }
 
 /**
- * Send a new email
+ * Send an email
+ * @param mail - Mail object to send
  */
 export const sendMail = async (mail: Mail) => {
   if (!transporter)

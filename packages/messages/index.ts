@@ -25,6 +25,11 @@ export const getText = (message: string, lang = "en") => {
   }
 };
 
+/**
+ * Send a JSON response
+ * @param message - Message to respond with
+ * @param data - Data object to replace message values with
+ */
 export const respond = (
   message: string,
   data?: { [index: string]: string }

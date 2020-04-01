@@ -93,6 +93,13 @@ import {
   watch,
   log
 } from "signale";
+
+/**
+ * Log an error to the console
+ * @param category - Category for error
+ * @param err - Error message
+ * @param level - Error code: warning (2) or error (1)
+ */
 export const logError = (category: string, err: string, level: 1 | 2 = 2) => {
   if (level === 1) return error(`${category}: ${err}`);
   warn(`${category}: ${err}`);

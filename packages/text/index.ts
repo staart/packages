@@ -30,9 +30,17 @@ const hashIds = new Hashids(
   "abcdefghijklmnopqrstuvwxyz1234567890"
 );
 
+/**
+ * Generate a new hash ID
+ * @param id - ID
+ */
 export const generateHashId = (id: string) =>
   `${HASH_ID_PREFIX}${hashIds.encode(id)}`;
 
+/**
+ * Convert a hash ID back to regular ID
+ * @param id - Hash ID
+ */
 export const hashIdToId = (id: string | number): string => {
   if (typeof id === "number") return id.toString();
   if (id.startsWith(HASH_ID_PREFIX)) {
@@ -53,6 +61,11 @@ export const hashIdToId = (id: string | number): string => {
   return id;
 };
 
+/**
+ * Convert a string to its slug
+ * @param name -String to convert
+ * @param options - Slugify options
+ */
 export const slugify = (
   name: string,
   options?: {
@@ -62,6 +75,10 @@ export const slugify = (
   }
 ) => slugifyString(name, options || { lower: true, strict: true });
 
+/**
+ * Convert a name/username to slug
+ * @param name - Name to convert
+ */
 export const createSlug = (name: string) =>
   `${slugifyString(name, {
     lower: true

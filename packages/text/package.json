@@ -1,6 +1,6 @@
 {
   "name": "@staart/text",
-  "version": "2.2.1",
+  "version": "2.2.2",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
