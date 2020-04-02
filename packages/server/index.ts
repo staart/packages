@@ -6,6 +6,7 @@ import { json, urlencoded } from "body-parser";
 import { Request, Response, NextFunction, RequestHandler } from "express";
 import RateLimit from "express-rate-limit";
 import slowDown from "express-slow-down";
+import cleanup from "node-cleanup";
 
 const bool = (val?: string | boolean) => String(val).toLowerCase() === "true";
 
@@ -16,7 +17,7 @@ export interface RawRequest extends Request {
 config();
 
 export * from "@overnightjs/core";
-export { slowDown, RateLimit };
+export { slowDown, RateLimit, cleanup };
 export { Request, Response, NextFunction, RequestHandler } from "express";
 
 /**
