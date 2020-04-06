@@ -1,0 +1,22 @@
+{
+  "name": "@staart/config",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "license": "MIT",
+  "repository": "git@github.com:staart/packages",
+  "author": "Anand Chowdhary <mail@anandchowdhary.com>",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^13.11.0",
+    "dotenv": "^8.2.0",
+    "typescript": "^3.8.2"
+  },
+  "peerDependencies": {
+    "dotenv": "^8.2.0"
+  }
+}
