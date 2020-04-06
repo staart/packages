@@ -34,7 +34,9 @@ const elasticSearchConfig = AWS_ELASTIC_HOST
  * Client doesn't support the "awsConfig" property,
  * which is part of "aws-elasticsearch-connector"
  */
-export const elasticSearch = new (Client as any)(elasticSearchConfig) as Client;
+export const elasticSearch = elasticSearchEnabled
+  ? (new (Client as any)(elasticSearchConfig) as Client)
+  : {};
 
 export const cleanElasticSearchQueryResponse = (
   response: any,
