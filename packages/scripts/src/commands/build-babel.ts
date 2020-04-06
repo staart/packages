@@ -1,7 +1,7 @@
 import { Command } from "@oclif/command";
 import { exec, cd } from "shelljs";
 import { join, resolve } from "path";
-import { writeFile, readJson } from "fs-extra";
+import { writeJson, readJson } from "fs-extra";
 
 const DIR = resolve(join(".staart"));
 
@@ -20,12 +20,12 @@ export default class BuildBabel extends Command {
         ["@babel/plugin-transform-runtime"],
         ["@babel/plugin-proposal-decorators", { legacy: true }],
         "@babel/proposal-class-properties",
-        "@babel/plugin-proposal-object-rest-spread"
+        "@babel/plugin-proposal-object-rest-spread",
       ],
-      ...(staartRc.babel || {})
+      ...(staartRc.babel || {}),
     };
 
-    await writeFile(join(DIR, ".babelrc"), babelRc);
+    await writeJson(join(DIR, ".babelrc"), babelRc);
     cd(".staart");
     exec(
       'babel src --out-dir ../dist/src --extensions ".ts,.tsx" --source-maps inline'

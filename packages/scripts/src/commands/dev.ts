@@ -16,7 +16,10 @@ export default class Dev extends Command {
     let PID = 0;
     const nodeProcess = child_process.exec(
       "node dist/src/__staart.js",
-      (err, stdout) => console.log(stdout)
+      (err, stdout) => {
+        if (err) console.log(err);
+        if (stdout) console.log(stdout);
+      }
     );
     PID = nodeProcess.pid;
     success("Launched app");
@@ -25,6 +28,7 @@ export default class Dev extends Command {
       touch(".env");
       mkdir("-p", ".staart");
       cp(".env", ".staart/.env");
+      cp(".staartrc", ".staart/.staartrc");
       cp("-r", "src", ".staart");
       cp("-r", "static", ".staart");
       cp("package.json", ".staart");

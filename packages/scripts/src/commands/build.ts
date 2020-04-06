@@ -18,7 +18,7 @@ export default class Build extends Command {
 
     touch(".env");
     let env = await readFile(".env", "utf8");
-    Object.keys(staartRc.env || {}).forEach(i => {
+    Object.keys(staartRc.env || {}).forEach((i) => {
       env += `${i} = ${staartRc.env[i]}`;
     });
     await writeFile(".env", env);
@@ -32,6 +32,7 @@ export default class Build extends Command {
 
     mkdir("-p", ".staart");
     cp(".env", ".staart/.env");
+    cp(".staartrc", ".staart/.staartrc");
     cp("-r", "src", ".staart");
     cp("-r", "static", ".staart");
     cp("package.json", ".staart");
@@ -52,11 +53,11 @@ export default class Build extends Command {
       emitDecoratorMetadata: "true ",
       declarationDir: "./dist ",
       outDir: "./dist",
-      ...(staartRc.tsconfig || {})
+      ...(staartRc.tsconfig || {}),
     };
 
     let tsString = "";
-    Object.keys(typeScriptConfig).forEach(key => {
+    Object.keys(typeScriptConfig).forEach((key) => {
       tsString += `--${key} ${typeScriptConfig[key]}`;
     });
 
@@ -71,7 +72,7 @@ export default class Build extends Command {
 const insert = <T = string>(arr: T[], index: number, ...newItems: T[]) => [
   ...arr.slice(0, index),
   ...newItems,
-  ...arr.slice(index)
+  ...arr.slice(index),
 ];
 
 const updateControllerCode = async () => {
@@ -79,13 +80,13 @@ const updateControllerCode = async () => {
   for await (const controller of controllers) {
     let oneController = (await readFile(controller)).toString().split("\n");
 
-    const hasjsonAsyncResponse = oneController.findIndex(line =>
+    const hasjsonAsyncResponse = oneController.findIndex((line) =>
       line.includes("jsonAsyncResponse")
     );
-    const hasClassWrapper = oneController.findIndex(line =>
+    const hasClassWrapper = oneController.findIndex((line) =>
       line.includes("ClassWrapper")
     );
-    const hasClassOptions = oneController.findIndex(line =>
+    const hasClassOptions = oneController.findIndex((line) =>
       line.includes("ClassOptions")
     );
 
@@ -113,7 +114,7 @@ const updateControllerCode = async () => {
       );
     }
 
-    const controllerIndex = oneController.findIndex(line =>
+    const controllerIndex = oneController.findIndex((line) =>
       line.startsWith("@Controller")
     );
     oneController = insert(
