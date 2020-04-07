@@ -36,7 +36,7 @@ const elasticSearchConfig = AWS_ELASTIC_HOST
  */
 export const elasticSearch = elasticSearchEnabled
   ? (new (Client as any)(elasticSearchConfig) as Client)
-  : {};
+  : ({} as Client);
 
 export const cleanElasticSearchQueryResponse = (
   response: any,
