@@ -24,8 +24,8 @@ const generateControllers = async () => {
     server = `import { ChildControllers } from "@staart/server";\n` + server;
 
   const controllers = (await recursive(join(SRC, "controllers")))
-    .map(file => file.split(join(SRC, "controllers").toString())[1])
-    .filter(file => file.endsWith("index.ts"));
+    .map((file) => file.split(join(SRC, "controllers").toString())[1])
+    .filter((file) => file.endsWith("index.ts"));
   const exportName: string[] = [];
   const generatedName: string[] = [];
 
@@ -48,7 +48,7 @@ const generateControllers = async () => {
 
   const insertCode = `
     @ClassWrapper(jsonAsyncResponse)
-    @ChildControllers([${generatedName.map(e => `new ${e}()`).join(", ")}])
+    @ChildControllers([${generatedName.map((e) => `new ${e}()`).join(", ")}])
     class RootController
   `;
   server =
@@ -69,7 +69,7 @@ const generateRedirects = async () => {
   const redirectCode = `
     ${redirects
       .map(
-        rule => `
+        (rule) => `
       this.app.get("${rule.split(" ")[0]}", (req, res) => res.redirect("${
           rule.split(" ")[1]
         }"));
@@ -86,14 +86,14 @@ const generateCrons = async () => {
   const crons = readdirSync(join(SRC, "crons"));
   const cronImport = crons
     .map(
-      cronFile =>
+      (cronFile) =>
         `import cron_${cronFile.split(".ts")[0]} from "./crons/${
           cronFile.split(".ts")[0]
         }";`
     )
     .join("\n");
   const cronCode = `
-  ${crons.map(cronFile => `cron_${cronFile.split(".ts")[0]}();`).join("")}
+  ${crons.map((cronFile) => `cron_${cronFile.split(".ts")[0]}();`).join("")}
   `;
   server = cronImport + "\n" + cronCode + "\n" + server;
   if (crons.length) success(`Setup ${crons.length} cron jobs`);
@@ -102,7 +102,7 @@ const generateCrons = async () => {
 const generateStaticFiles = async () => {
   const files = await recursive(join(SRC, "..", "static"));
   const staticFiles = files.map(
-    file => file.split(join(SRC, "..", "static").toString())[1]
+    (file) => file.split(join(SRC, "..", "static").toString())[1]
   );
   const staticCode = `
     ${staticFiles
@@ -127,8 +127,8 @@ const writeServerFile = async () => {
   await writeFile(
     join(SRC, "__staart.ts"),
     `
-  import regeneratorRuntime from "regenerator-runtime";
-  import "@babel/polyfill";
+  require("regenerator-runtime");
+  require("@babel/polyfill");
   import { Staart } from "./app";
   import { PORT, SENTRY_DSN } from "./config";
   import { init } from "@sentry/node";
