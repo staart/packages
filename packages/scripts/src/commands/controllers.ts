@@ -33,8 +33,10 @@ const generateControllers = async () => {
     const controllerFile = readFileSync(
       join(SRC, "controllers", controller)
     ).toString();
-    exportName.push(controllerFile.split("export class ")[1].split(" ")[0]);
-    generatedName.push(`Controller${index}`);
+    if (controllerFile.includes("export class ")) {
+      exportName.push(controllerFile.split("export class ")[1].split(" ")[0]);
+      generatedName.push(`Controller${index}`);
+    }
   });
 
   const importCode = `${exportName
