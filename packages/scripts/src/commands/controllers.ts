@@ -23,9 +23,9 @@ const generateControllers = async () => {
   if (!server.includes("ChildControllers"))
     server = `import { ChildControllers } from "@staart/server";\n` + server;
 
-  const controllers = (await recursive(join(SRC, "controllers")))
-    .map((file) => file.split(join(SRC, "controllers").toString())[1])
-    .filter((file) => file.endsWith("index.ts"));
+  const controllers = (await recursive(join(SRC, "controllers"))).map(
+    (file) => file.split(join(SRC, "controllers").toString())[1]
+  );
   const exportName: string[] = [];
   const generatedName: string[] = [];
 
