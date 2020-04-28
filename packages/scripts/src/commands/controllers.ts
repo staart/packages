@@ -33,19 +33,33 @@ const generateControllers = async () => {
     const controllerFile = readFileSync(
       join(SRC, "controllers", controller)
     ).toString();
-    if (controllerFile.includes("export class ")) {
-      exportName.push(controllerFile.split("export class ")[1].split(" ")[0]);
+    if (
+      controllerFile.includes("export class ") ||
+      controllerFile.includes("export default class ")
+    ) {
+      if (controllerFile.includes("export class ")) {
+        exportName.push(controllerFile.split("export class ")[1].split(" ")[0]);
+      } else {
+        exportName.push(
+          controllerFile.split("export default class ")[1].split(" ")[0] +
+            "__default"
+        );
+      }
       generatedName.push(`Controller${index}`);
     }
   });
 
   const importCode = `${exportName
-    .map(
-      (e, i) =>
-        `import { ${e} as ${generatedName[i]} } from "./controllers${
+    .map((e, i) => {
+      if (e.endsWith("__default")) {
+        return `import ${generatedName[i]} from "./controllers${
           controllers[i].split(".ts")[0]
-        }";`
-    )
+        }";`;
+      }
+      return `import { ${e} as ${generatedName[i]} } from "./controllers${
+        controllers[i].split(".ts")[0]
+      }";`;
+    })
     .join("\n")}`;
 
   const insertCode = `
