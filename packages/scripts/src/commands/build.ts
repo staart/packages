@@ -7,6 +7,9 @@ import { success } from "@staart/errors";
 
 const SRC = resolve(join(".staart", "src"));
 
+const replaceEnd = (text: string, find: string, replace: string) =>
+  text.endsWith(find) ? `${text.slice(0, -1 * find.length)}${replace}` : text;
+
 export default class Build extends Command {
   static description = "build your Staart API app";
 
@@ -116,12 +119,18 @@ const updateControllerCode = async () => {
     }
 
     const controllerIndex = oneController.findIndex((line) =>
-      line.startsWith("@Controller")
+      line.startsWith("export class")
     );
+    const controllerPathName = replaceEnd(
+      replaceEnd(controller.split("src/controllers/")[1], ".ts", ""),
+      "/index",
+      ""
+    ).replace(/_/g, ":");
     oneController = insert(
       oneController,
-      controllerIndex + 1,
-      `@ClassWrapper(jsonAsyncResponse)\n@ClassOptions({ mergeParams: true })`
+      controllerIndex,
+      `@Controller("${controllerPathName}")
+@ClassWrapper(jsonAsyncResponse)\n@ClassOptions({ mergeParams: true })`
     );
 
     await writeFile(controller, oneController.join("\n"));
