@@ -1,6 +1,6 @@
 {
   "name": "@staart/text",
-  "version": "2.2.2",
+  "version": "2.3.0",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
@@ -20,6 +20,7 @@
     "@types/bcryptjs": "^2.4.2",
     "@types/ms": "^0.7.31",
     "bcryptjs": "^2.4.3",
+    "change-case": "^4.1.1",
     "crypto-random-string": "^3.1.0",
     "hashids": "^2.2.1",
     "ip-anonymize": "^0.1.0",

@@ -8,6 +8,7 @@ import ipRangeCheck from "ip-range-check";
 
 config();
 
+export * from "change-case";
 export { ms, ipRangeCheck };
 export { isMatch } from "matcher";
 export {
@@ -18,7 +19,7 @@ export {
   getRounds,
   getSalt,
   encodeBase64,
-  decodeBase64
+  decodeBase64,
 } from "bcryptjs";
 
 const HASH_IDS = process.env.HASH_IDS || "";
@@ -81,7 +82,7 @@ export const slugify = (
  */
 export const createSlug = (name: string) =>
   `${slugifyString(name, {
-    lower: true
+    lower: true,
   }).replace(/'|"/g, "")}-${cryptoRandomString({ length: 5 })}`;
 
 /**
@@ -97,7 +98,7 @@ export const capitalizeEachFirstLetter = (string: string) =>
   (string = string
     .toLowerCase()
     .split(" ")
-    .map(s => s.charAt(0).toUpperCase() + s.toLowerCase().substring(1))
+    .map((s) => s.charAt(0).toUpperCase() + s.toLowerCase().substring(1))
     .join(" "));
 
 /**
@@ -120,9 +121,6 @@ export const capitalizeFirstLetter = (string: string) =>
  * Convert a JS Date to MySQL-compatible datetime
  */
 export const dateToDateTime = (date: Date) =>
-  date
-    .toISOString()
-    .slice(0, 19)
-    .replace("T", " ");
+  date.toISOString().slice(0, 19).replace("T", " ");
 
 export const randomString = cryptoRandomString;
