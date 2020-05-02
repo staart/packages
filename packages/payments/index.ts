@@ -10,7 +10,7 @@ const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 
 const stripe = new Stripe(STRIPE_SECRET_KEY, {
   apiVersion: "2020-03-02",
-  typescript: true
+  typescript: true,
 });
 
 /**
@@ -55,7 +55,7 @@ export const createCustomer = async (
 ) => {
   const created = await stripe.customers.create({
     ...customer,
-    metadata: { organizationId }
+    metadata: { organizationId },
   });
   await updateOrganization(organizationId, { stripeCustomerId: created.id });
   return { success: true, message: "billing-subscription-created" };
@@ -91,7 +91,7 @@ export const getInvoices = async (
     start,
     billing,
     itemsPerPage,
-    subscription
+    subscription,
   }: {
     start?: string;
     billing?: Stripe.InvoiceListParams.CollectionMethod;
@@ -106,7 +106,7 @@ export const getInvoices = async (
         starting_after: start !== "0" ? start : undefined,
         collection_method: billing,
         limit: itemsPerPage,
-        subscription
+        subscription,
       },
       undefined
     )
@@ -134,7 +134,7 @@ export const getSubscriptions = async (
     billing,
     itemsPerPage,
     plan,
-    status
+    status,
   }: {
     start?: string;
     billing?: Stripe.Subscription.CollectionMethod;
@@ -150,7 +150,7 @@ export const getSubscriptions = async (
       collection_method: billing,
       limit: itemsPerPage,
       plan,
-      status
+      status,
     })
   );
 };
@@ -189,7 +189,7 @@ export const createSubscription = async (
     tax_percent,
     plan,
     billing,
-    number_of_seats
+    number_of_seats,
   }: {
     tax_percent?: number;
     plan: string;
@@ -202,7 +202,7 @@ export const createSubscription = async (
     tax_percent,
     trial_from_plan: true,
     items: [{ plan, quantity: number_of_seats }],
-    collection_method: billing
+    collection_method: billing,
   });
   return { success: true, message: "billing-subscription-created" };
 };
@@ -215,7 +215,7 @@ export const getProductPricing = async () => {
   const plans = await stripe.plans.list({ product: STRIPE_PRODUCT_ID });
   // If you have a custom plan for a client, don't show that
   plans.data = plans.data.filter(
-    plan => !(plan.nickname || "").toLowerCase().startsWith("custom plan")
+    (plan) => !(plan.nickname || "").toLowerCase().startsWith("custom plan")
   );
   return plans;
 };
@@ -228,7 +228,7 @@ export const getSources = async (
   id: string,
   {
     start,
-    itemsPerPage
+    itemsPerPage,
   }: {
     start?: string;
     itemsPerPage?: number;
@@ -238,7 +238,7 @@ export const getSources = async (
     await stripe.customers.listSources(id, {
       object: "card",
       starting_after: start !== "0" ? start : undefined,
-      limit: itemsPerPage
+      limit: itemsPerPage,
     })
   );
 };
@@ -283,7 +283,7 @@ export const updateSource = async (id: string, cardId: string, data: any) => {
  */
 export const getCoupons = async ({
   start,
-  itemsPerPage
+  itemsPerPage,
 }: {
   start?: string;
   itemsPerPage?: number;
@@ -291,7 +291,7 @@ export const getCoupons = async ({
   return cleanStripeResponse(
     await stripe.coupons.list({
       starting_after: start !== "0" ? start : undefined,
-      limit: itemsPerPage
+      limit: itemsPerPage,
     })
   );
 };
@@ -340,7 +340,7 @@ export const getCustomBalanceTransactions = async (
   id: string,
   {
     start,
-    itemsPerPage
+    itemsPerPage,
   }: {
     start?: string;
     itemsPerPage?: number;
@@ -348,7 +348,7 @@ export const getCustomBalanceTransactions = async (
 ) => {
   return await stripe.customers.listBalanceTransactions(id, {
     starting_after: start !== "0" ? start : undefined,
-    limit: itemsPerPage
+    limit: itemsPerPage,
   });
 };
 
@@ -375,14 +375,14 @@ export const createCustomerBalanceTransaction = async (
     amount,
     currency,
     description,
-    metadata
+    metadata,
   }: { amount: number; currency: string; description?: string; metadata?: any }
 ) => {
   return await stripe.customers.createBalanceTransaction(id, {
     amount,
     currency,
     description,
-    metadata
+    metadata,
   });
 };
 
@@ -396,11 +396,30 @@ export const updateCustomerBalanceTransaction = async (
   transactionId: string,
   {
     description,
-    metadata
+    metadata,
   }: { amount: number; currency: string; description?: string; metadata?: any }
 ) => {
   return await stripe.customers.updateBalanceTransaction(id, transactionId, {
     description,
-    metadata
+    metadata,
+  });
+};
+
+/**
+ * Get a list of all events
+ */
+export const getEvents = async ({
+  types,
+  start,
+  itemsPerPage,
+}: {
+  types: string[];
+  start?: string;
+  itemsPerPage?: number;
+}) => {
+  return await stripe.events.list({
+    types,
+    starting_after: start !== "0" ? start : undefined,
+    limit: itemsPerPage,
   });
 };
