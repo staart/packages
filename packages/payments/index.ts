@@ -417,9 +417,11 @@ export const getEvents = async ({
   start?: string;
   itemsPerPage?: number;
 }) => {
-  return await stripe.events.list({
-    types,
-    starting_after: start !== "0" ? start : undefined,
-    limit: itemsPerPage,
-  });
+  return cleanStripeResponse(
+    await stripe.events.list({
+      types,
+      starting_after: start !== "0" ? start : undefined,
+      limit: itemsPerPage,
+    })
+  );
 };
