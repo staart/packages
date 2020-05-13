@@ -72,7 +72,7 @@ export const sendMail = async (mail: Mail) => {
   if (!transporter)
     return logError("Email", "Setup transporter before sending an email", 1);
   const result = await transporter.sendMail({
-    from: EMAIL_FROM || SES_EMAIL,
+    from: mail.from || EMAIL_FROM || SES_EMAIL,
     to: mail.to,
     cc: mail.cc,
     bcc: mail.bcc,
