@@ -425,3 +425,77 @@ export const getEvents = async ({
     })
   );
 };
+
+export const getSession = async (id: string) =>
+  stripe.checkout.sessions.retrieve(id);
+
+export const createSubscriptionWithSession = async (
+  plan: string,
+  { success_url, cancel_url }: { success_url: string; cancel_url: string }
+) => {
+  return stripe.checkout.sessions.create({
+    payment_method_types: process.env.STRIPE_PAYMENT_METHODS
+      ? JSON.parse(process.env.STRIPE_PAYMENT_METHODS)
+      : ["card", "ideal"],
+    subscription_data: {
+      items: [{ plan: plan }],
+    },
+    success_url,
+    cancel_url,
+  });
+};
+
+export const createSubscriptionForCustomerWithSession = async (
+  id: string,
+  plan: string,
+  {
+    success_url,
+    cancel_url,
+    email,
+    default_tax_rates,
+    coupon,
+  }: {
+    success_url: string;
+    cancel_url: string;
+    email?: string;
+    default_tax_rates?: string[];
+    coupon?: string;
+  }
+) => {
+  return stripe.checkout.sessions.create({
+    customer: id,
+    payment_method_types: process.env.STRIPE_PAYMENT_METHODS
+      ? JSON.parse(process.env.STRIPE_PAYMENT_METHODS)
+      : ["card", "ideal"],
+    subscription_data: {
+      trial_from_plan: true,
+      items: [{ plan: plan }],
+      default_tax_rates,
+      coupon,
+    },
+    customer_email: email,
+    success_url,
+    cancel_url,
+  });
+};
+
+export const createPaymentDetailsSession = async (
+  id: string,
+  subscription_id: string,
+  { success_url, cancel_url }: { success_url: string; cancel_url: string }
+) => {
+  return stripe.checkout.sessions.create({
+    payment_method_types: process.env.STRIPE_PAYMENT_METHODS
+      ? JSON.parse(process.env.STRIPE_PAYMENT_METHODS)
+      : ["card", "ideal"],
+    mode: "setup",
+    setup_intent_data: {
+      metadata: {
+        customer_id: id,
+        subscription_id: subscription_id,
+      },
+    },
+    success_url,
+    cancel_url,
+  });
+};
