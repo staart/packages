@@ -79,7 +79,7 @@ const insert = <T = string>(arr: T[], index: number, ...newItems: T[]) => [
   ...arr.slice(index),
 ];
 
-const updateControllerCode = async () => {
+export const updateControllerCode = async () => {
   const controllers = await recursive(join(SRC, "controllers"));
   for await (const controller of controllers) {
     let oneController = (await readFile(controller)).toString().split("\n");
