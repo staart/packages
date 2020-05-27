@@ -12,6 +12,7 @@ const replaceEnd = (text: string, find: string, replace: string) =>
 
 export default class Build extends Command {
   static description = "build your Staart API app";
+  static args = [{ name: "skip-tsc" }];
 
   async run() {
     let staartRc: any = {};
@@ -66,7 +67,7 @@ export default class Build extends Command {
     });
 
     const { args } = this.parse(Build);
-    if (JSON.stringify(args).includes("--skip-tsc")) return;
+    if (args["skip-tsc"]) return;
 
     // See https://github.com/microsoft/TypeScript/issues/27379
     exec(
