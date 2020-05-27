@@ -65,6 +65,9 @@ export default class Build extends Command {
       tsString += `--${key} ${typeScriptConfig[key]}`;
     });
 
+    const { args } = this.parse(Build);
+    if (JSON.stringify(args).includes("--skip-tsc")) return;
+
     // See https://github.com/microsoft/TypeScript/issues/27379
     exec(
       `tsc ${tsString} --lib esnext --lib dom --typeRoots ./src/@types --typeRoots node_modules/@types .staart/**/*.ts`
