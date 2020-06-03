@@ -26,8 +26,8 @@ export const setupTransporter = () => {
         apiVersion: "2010-12-01",
         accessKeyId: SES_ACCESS,
         secretAccessKey: SES_SECRET,
-        region: SES_REGION
-      })
+        region: SES_REGION,
+      }),
     });
   } else {
     transporter = createTransport({
@@ -36,8 +36,8 @@ export const setupTransporter = () => {
       secure: true,
       auth: {
         user: EMAIL_FROM,
-        pass: EMAIL_PASSWORD
-      }
+        pass: EMAIL_PASSWORD,
+      },
     });
   }
 };
@@ -62,6 +62,29 @@ export interface Mail {
   message: string;
   altText?: string;
   replyTo?: string;
+  attachments?: {
+    filename?: any;
+    content?: any;
+    path?: any;
+    href?: any;
+    httpHeaders?: any;
+    contentType?: any;
+    contentDisposition?: any;
+    cid?: any;
+    encoding?: any;
+    headers?: any;
+    raw?: any;
+  }[];
+  icalEvent?: {
+    method?: string;
+    filename?: string;
+    content?: any;
+    path?: any;
+    href?: any;
+    encoding?: string;
+  };
+  list?: any;
+  headers?: any;
 }
 
 /**
@@ -78,7 +101,11 @@ export const sendMail = async (mail: Mail) => {
     bcc: mail.bcc,
     subject: mail.subject,
     text: mail.altText,
-    html: mail.message
+    html: mail.message,
+    attachments: mail.attachments,
+    icalEvent: mail.icalEvent,
+    list: mail.list,
+    headers: mail.headers,
   });
   success("Sent email", mail.to, mail.subject);
   return result;
