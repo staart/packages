@@ -20,7 +20,7 @@ const password = parsedUrl.password
 export const redisQueue: RedisSMQ = new (RedisSMQ as any)({
   host,
   port,
-  password
+  password,
 });
 
 /**
@@ -28,7 +28,7 @@ export const redisQueue: RedisSMQ = new (RedisSMQ as any)({
  */
 const redis = createHandyClient({
   url: REDIS_URL,
-  retry_strategy: options => {
+  retry_strategy: (options) => {
     if (options.error && options.error.code === "ECONNREFUSED") {
       console.error("Redis connection failed", "Server refused the connection");
     }
@@ -47,7 +47,7 @@ const redis = createHandyClient({
 
     // Reconnect after this time
     return Math.min(options.attempt * 100, 3000);
-  }
+  },
 });
 
-export default redis;
+export { redis };
