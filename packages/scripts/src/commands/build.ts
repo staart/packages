@@ -85,6 +85,9 @@ const insert = <T = string>(arr: T[], index: number, ...newItems: T[]) => [
 
 export const updateControllerCode = async () => {
   const controllers = await recursive(join(SRC, "controllers"));
+  const controllerClassName = `Controller${
+    Math.random().toString().split(".")[1]
+  }`;
   for await (const controller of controllers) {
     let oneController = (await readFile(controller)).toString().split("\n");
 
@@ -122,6 +125,12 @@ export const updateControllerCode = async () => {
       );
     }
 
+    oneController = insert(
+      oneController,
+      0,
+      `import { Controller as ${controllerClassName} } from "@staart/server";`
+    );
+
     const controllerIndex = oneController.findIndex((line) =>
       line.startsWith("export class")
     );
@@ -133,7 +142,7 @@ export const updateControllerCode = async () => {
     oneController = insert(
       oneController,
       controllerIndex,
-      `@Controller("${controllerPathName}")
+      `@${controllerClassName}("${controllerPathName}")
 @ClassWrapper(jsonAsyncResponse)\n@ClassOptions({ mergeParams: true })`
     );
 
