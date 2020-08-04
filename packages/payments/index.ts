@@ -49,9 +49,9 @@ export const getCustomer = async (id: string) => {
  * Get the details of a customer
  */
 export const createCustomer = async (
-  organizationId: string,
+  organizationId: number,
   customer: Stripe.CustomerCreateParams,
-  updateOrganization: (id: string, organization: any) => Promise<any>
+  updateOrganization: (id: number, organization: any) => Promise<any>
 ) => {
   const created = await stripe.customers.create({
     ...customer,
