@@ -4,6 +4,7 @@
 		"shelljs": "^0.8.4"
 	},
 	"devDependencies": {
+		"@types/fs-extra": "^9.0.1",
 		"@types/shelljs": "^0.8.8"
 	}
 }
