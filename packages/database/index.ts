@@ -35,7 +35,7 @@ const decodeTwtId = (object: any) => {
   return object;
 };
 
-prisma.$use(async (params, next) => {
+prisma.$use(async (params: any, next: any) => {
   // Decode TWT
   if (typeof params.args === "object") params.args = decodeTwtId(params.args);
 
