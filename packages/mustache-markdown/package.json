@@ -1,6 +1,6 @@
 {
   "name": "@staart/mustache-markdown",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",

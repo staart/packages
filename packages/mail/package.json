@@ -1,6 +1,6 @@
 {
   "name": "@staart/mail",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",

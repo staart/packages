@@ -1,6 +1,6 @@
 {
   "name": "@staart/errors",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "main": "dist/index.js",
   "license": "MIT",
   "repository": "git@github.com:staart/packages",
