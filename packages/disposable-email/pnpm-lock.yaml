@@ -1,25 +1,28 @@
 dependencies:
-  disposable-email-domains: 1.0.52
-  matcher: 2.1.0
+  disposable-email-domains: 1.0.57
+  matcher: 3.0.0
 devDependencies:
-  '@staart/errors': 2.0.1_dotenv@8.2.0
-  '@staart/validate': 3.0.0_dotenv@8.2.0
-  '@types/hapi__joi': 16.0.12
+  '@staart/errors': 2.1.1_dotenv@8.2.0
+  '@staart/validate': 3.0.1_dotenv@8.2.0
+  '@types/hapi__joi': 17.1.4
   dotenv: 8.2.0
-  typescript: 3.8.2
+  typescript: 4.0.2
 lockfileVersion: 5.1
 packages:
   /@hapi/address/4.0.0:
     dependencies:
       '@hapi/hoek': 9.0.3
+    deprecated: This version has been deprecated and is no longer supported or maintained
     dev: true
     resolution:
       integrity: sha512-GDDpkCdSUfkQCznmWUHh9dDN85BWf/V8TFKQ2JLuHdGB4Yy3YTEGBzZxoBNxfNBEvreSR/o+ZxBBSNNEVzY+lQ==
   /@hapi/formula/2.0.0:
+    deprecated: This version has been deprecated and is no longer supported or maintained
     dev: true
     resolution:
       integrity: sha512-V87P8fv7PI0LH7LiVi8Lkf3x+KCO7pQozXRssAHNXXL9L1K+uyu4XypLXwxqVDKgyQai6qj3/KteNlrqDx4W5A==
   /@hapi/hoek/9.0.3:
+    deprecated: This version has been deprecated and is no longer supported or maintained
     dev: true
     resolution:
       integrity: sha512-jKtjLLDiH95b002sJVc5c74PE6KKYftuyVdVmsuYId5stTaWcRFqE+5ukZI4gDUKjGn8wv2C3zPn3/nyjEI7gg==
@@ -30,6 +33,7 @@ packages:
       '@hapi/hoek': 9.0.3
       '@hapi/pinpoint': 2.0.0
       '@hapi/topo': 5.0.0
+    deprecated: 'joi is leaving the @hapi organization and moving back to ''joi'' (https://github.com/sideway/joi/issues/2411)'
     dev: true
     resolution:
       integrity: sha512-ob67RcPlwRWxBzLCnWvcwx5qbwf88I3ykD7gcJLWOTRfLLgosK7r6aeChz4thA3XRvuBfI0KB1tPVl2EQFlPXw==
@@ -43,7 +47,7 @@ packages:
     dev: true
     resolution:
       integrity: sha512-tFJlT47db0kMqVm3H4nQYgn6Pwg10GTZHb1pwmSiv1K4ks6drQOtfEF5ZnPjkvC+y4/bUPHK+bc87QvLcL+WMw==
-  /@staart/errors/2.0.1_dotenv@8.2.0:
+  /@staart/errors/2.1.1_dotenv@8.2.0:
     dependencies:
       '@types/signale': 1.2.1
       dotenv: 8.2.0
@@ -53,8 +57,8 @@ packages:
     peerDependencies:
       dotenv: ^8.2.0
     resolution:
-      integrity: sha512-ZD+2JcByLx9sdbgtKKGGtPKTUD3VpqUVt5gu1jqNn7zq4kiH73SGr3wYDEb7WgMJ2+TEI0B+pYiObrKmZNiW8Q==
-  /@staart/validate/3.0.0_dotenv@8.2.0:
+      integrity: sha512-VModOt62Ucs82+tQx3+TTFyl4FpPJvV+ZWIrUvljziKIBaTqqYEt3ivG9X+c1fFtqqkAL9etoxlu2xYsfIIwMg==
+  /@staart/validate/3.0.1_dotenv@8.2.0:
     dependencies:
       '@hapi/joi': 17.1.0
       dotenv: 8.2.0
@@ -62,11 +66,11 @@ packages:
     peerDependencies:
       dotenv: ^8.2.0
     resolution:
-      integrity: sha512-Z+tPoU4W+D8riZKkbSV73VHHy9jb1r6eqFQzXTJSuNr6JvV+xCohn7/v6VRRtmKDepQ5EeQdfFy2y3E6J20PZA==
-  /@types/hapi__joi/16.0.12:
+      integrity: sha512-ID02oOwpVtXIHp14a71jieC5JvMc+bfxv080mqYz7yCRdcvBjGYX8a8tJ2VkfpalzH7V3YCfXW6pB7Qq4cM/Eg==
+  /@types/hapi__joi/17.1.4:
     dev: true
     resolution:
-      integrity: sha512-xJYifuz59jXdWY5JMS15uvA3ycS3nQYOGqoIIE0+fwQ0qI3/4CxBc6RHsOTp6wk9M0NWEdpcTl02lOQOKMifbQ==
+      integrity: sha512-gqY3TeTyZvnyNhM02HgyCIoGIWsTFMnuzMfnD8evTsr1KIfueGJaz+QC77j+dFvhZ5cJArUNjDRHUjPxNohzGA==
   /@types/node/13.7.6:
     dev: true
     resolution:
@@ -105,10 +109,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-p9BVi9icQveV3UIyj3QIMcpTvCU=
-  /disposable-email-domains/1.0.52:
+  /disposable-email-domains/1.0.57:
     dev: false
     resolution:
-      integrity: sha512-0m1VmfPCpaf2/fKTBFSrZlghifBzEdWa0APoUAeLiNIde0mjYY7hhTc2wMC8dZaYebDEXhpNez/9syDxI+ciDw==
+      integrity: sha512-fBOPBW5aeZJndQaYz/TX3NG9hbfKG3XHhE5lwHAKI+iLYaGsne1HQjPuu4ruDUaapZtEqcDtzog/AQo91PxoWA==
   /dotenv/8.2.0:
     dev: true
     engines:
@@ -127,12 +131,12 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-G2HAViGQqN/2rjuyzwIAyhMLhtQ=
-  /escape-string-regexp/2.0.0:
+  /escape-string-regexp/4.0.0:
     dev: false
     engines:
-      node: '>=8'
+      node: '>=10'
     resolution:
-      integrity: sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
+      integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
   /figures/2.0.0:
     dependencies:
       escape-string-regexp: 1.0.5
@@ -191,14 +195,14 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-K1aLJl7slExtnA3pw9u7ygNUzY4=
-  /matcher/2.1.0:
+  /matcher/3.0.0:
     dependencies:
-      escape-string-regexp: 2.0.0
+      escape-string-regexp: 4.0.0
     dev: false
     engines:
-      node: '>=8'
+      node: '>=10'
     resolution:
-      integrity: sha512-o+nZr+vtJtgPNklyeUKkkH42OsK8WAfdgaJE2FNxcjLPg+5QbeEoT6vRj8Xq/iv18JlQ9cmKsEu0b94ixWf1YQ==
+      integrity: sha512-OkeDaAZ/bQCxeFAozM55PKcKU0yJMPGifLwV4Qgjitu+5MoAfSQN4lsLJeXZ1b8w0x+/Emda6MZgXS1jvsapng==
   /p-limit/1.3.0:
     dependencies:
       p-try: 1.0.0
@@ -275,18 +279,18 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
-  /typescript/3.8.2:
+  /typescript/4.0.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 specifiers:
-  '@staart/errors': ^2.0.1
-  '@staart/validate': ^3.0.0
-  '@types/hapi__joi': ^16.0.12
-  disposable-email-domains: ^1.0.52
+  '@staart/errors': ^2.1.1
+  '@staart/validate': ^3.0.1
+  '@types/hapi__joi': ^17.1.4
+  disposable-email-domains: ^1.0.57
   dotenv: ^8.2.0
-  matcher: ^2.1.0
-  typescript: ^3.8.2
+  matcher: ^3.0.0
+  typescript: ^4.0.2

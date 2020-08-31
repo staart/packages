@@ -1,58 +1,58 @@
 dependencies:
-  '@types/marked': 0.7.2
+  '@types/marked': 1.1.0
   '@types/mustache': 4.0.1
-  marked: 0.8.0
-  mustache: 4.0.0
+  marked: 1.1.1
+  mustache: 4.0.1
 devDependencies:
-  '@types/node': 13.7.6
+  '@types/node': 14.6.2
   dotenv: 8.2.0
-  typescript: 3.8.2
+  typescript: 4.0.2
 lockfileVersion: 5.1
 packages:
-  /@types/marked/0.7.2:
+  /@types/marked/1.1.0:
     dev: false
     resolution:
-      integrity: sha512-A3EDyNaq6OCcpaOia2HQ/tu2QYt8DKuj4ExP21VU3cU3HTo2FLslvbqa2T1vux910RHvuSVqpwKnnykSFcRWOA==
+      integrity: sha512-j8XXj6/l9kFvCwMyVqozznqpd/nk80krrW+QiIJN60Uu9gX5Pvn4/qPJ2YngQrR3QREPwmrE1f9/EWKVTFzoEw==
   /@types/mustache/4.0.1:
     dev: false
     resolution:
       integrity: sha512-wH6Tu9mbiOt0n5EvdoWy0VGQaJMHfLIxY/6wS0xLC7CV1taM6gESEzcYy0ZlWvxxiiljYvfDIvz4hHbUUDRlhw==
-  /@types/node/13.7.6:
+  /@types/node/14.6.2:
     dev: true
     resolution:
-      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
   /dotenv/8.2.0:
     dev: true
     engines:
       node: '>=8'
     resolution:
       integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
-  /marked/0.8.0:
+  /marked/1.1.1:
     dev: false
     engines:
       node: '>= 8.16.2'
     hasBin: true
     resolution:
-      integrity: sha512-MyUe+T/Pw4TZufHkzAfDj6HarCBWia2y27/bhuYkTaiUnfDYFnCP3KUN+9oM7Wi6JA2rymtVYbQu3spE0GCmxQ==
-  /mustache/4.0.0:
+      integrity: sha512-mJzT8D2yPxoPh7h0UXkB+dBj4FykPJ2OIfxAWeIHrvoHDkFxukV/29QxoFQoPM6RLEwhIFdJpmKBlqVM3s2ZIw==
+  /mustache/4.0.1:
     dev: false
     engines:
       npm: '>=1.4.0'
     hasBin: true
     resolution:
-      integrity: sha512-FJgjyX/IVkbXBXYUwH+OYwQKqWpFPLaLVESd70yHjSDunwzV2hZOoTBvPf4KLoxesUzzyfTH6F784Uqd7Wm5yA==
-  /typescript/3.8.2:
+      integrity: sha512-yL5VE97+OXn4+Er3THSmTdCFCtx5hHWzrolvH+JObZnUYwuaG7XV+Ch4fR2cIrcYI0tFHxS7iyFYl14bW8y2sA==
+  /typescript/4.0.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 specifiers:
-  '@types/marked': ^0.7.2
+  '@types/marked': ^1.1.0
   '@types/mustache': ^4.0.1
-  '@types/node': ^13.7.6
+  '@types/node': ^14.6.2
   dotenv: ^8.2.0
-  marked: ^0.8.0
-  mustache: ^4.0.0
-  typescript: ^3.8.2
+  marked: ^1.1.1
+  mustache: ^4.0.1
+  typescript: ^4.0.2

@@ -1,13 +1,13 @@
 dependencies:
-  stripe: 8.22.0
+  stripe: 8.90.0
 devDependencies:
-  '@staart/errors': 2.0.1_dotenv@8.2.0
-  '@types/node': 13.7.6
+  '@staart/errors': 2.1.1_dotenv@8.2.0
+  '@types/node': 14.6.2
   dotenv: 8.2.0
-  typescript: 3.8.2
+  typescript: 4.0.2
 lockfileVersion: 5.1
 packages:
-  /@staart/errors/2.0.1_dotenv@8.2.0:
+  /@staart/errors/2.1.1_dotenv@8.2.0:
     dependencies:
       '@types/signale': 1.2.1
       dotenv: 8.2.0
@@ -17,13 +17,13 @@ packages:
     peerDependencies:
       dotenv: ^8.2.0
     resolution:
-      integrity: sha512-ZD+2JcByLx9sdbgtKKGGtPKTUD3VpqUVt5gu1jqNn7zq4kiH73SGr3wYDEb7WgMJ2+TEI0B+pYiObrKmZNiW8Q==
-  /@types/node/13.7.6:
+      integrity: sha512-VModOt62Ucs82+tQx3+TTFyl4FpPJvV+ZWIrUvljziKIBaTqqYEt3ivG9X+c1fFtqqkAL9etoxlu2xYsfIIwMg==
+  /@types/node/14.6.2:
     resolution:
-      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
   /@types/signale/1.2.1:
     dependencies:
-      '@types/node': 13.7.6
+      '@types/node': 14.6.2
     dev: true
     resolution:
       integrity: sha512-mV6s2VgcBC16Jb+1EwulgRrrZBT93V4JCILkNPg31rvvSK6LRQQGU8R/SUivgHjDZ5LJZu/yL2kMF8j85YQTnA==
@@ -205,15 +205,15 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
-  /stripe/8.22.0:
+  /stripe/8.90.0:
     dependencies:
-      '@types/node': 13.7.6
+      '@types/node': 14.6.2
       qs: 6.9.1
     dev: false
     engines:
       node: ^8.1 || >=10.*
     resolution:
-      integrity: sha512-3/nEUbZdF+yJDK1r9RzZNC1HXya95SVFwV5Ntj6YfOS2zXsY/DZysGFei+GCxa1nCDkfKiuv3VC8KJu/epGvag==
+      integrity: sha512-0qvy0isFNlqiigLsXbosY0BllLjcz3XR/eyZLbdkkyc3DUVaFnP3+PwJsmOBSVNWcoN3oL7DVIzPZo/LDgcr3g==
   /supports-color/5.5.0:
     dependencies:
       has-flag: 3.0.0
@@ -222,16 +222,16 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
-  /typescript/3.8.2:
+  /typescript/4.0.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 specifiers:
-  '@staart/errors': ^2.0.1
-  '@types/node': ^13.7.6
+  '@staart/errors': ^2.1.1
+  '@types/node': ^14.6.2
   dotenv: ^8.2.0
-  stripe: ^8.22.0
-  typescript: ^3.8.2
+  stripe: ^8.90.0
+  typescript: ^4.0.2

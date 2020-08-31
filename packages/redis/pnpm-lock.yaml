@@ -1,20 +1,27 @@
 dependencies:
-  handy-redis: 1.8.0
+  handy-redis: 1.8.3
+  rsmq: 0.12.2
 devDependencies:
-  '@types/node': 13.7.6
+  '@types/node': 14.6.2
   dotenv: 8.2.0
-  typescript: 3.8.2
+  typescript: 4.0.2
 lockfileVersion: 5.1
 packages:
-  /@types/node/13.7.6:
+  /@types/node/14.6.2:
     resolution:
-      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
   /@types/redis/2.8.16:
     dependencies:
-      '@types/node': 13.7.6
+      '@types/node': 14.6.2
     dev: false
     resolution:
       integrity: sha512-7iJzu9OvKPuKiZxlIVG7P3UM7C3XX4FxXk9f24MkAvucze93Zp4XzoERmDaKQnaZP0Qv1pMAq25lAvUPCKXCHQ==
+  /@types/redis/2.8.26:
+    dependencies:
+      '@types/node': 14.6.2
+    dev: false
+    resolution:
+      integrity: sha512-/Sot3oAGnrHQ9C3HRFXDApzBEugoYFyh4Pd8y1d9x4yCoOejFLbrD5gWQrsdANPpSj8VbucEJrNMJv1nzMptIA==
   /denque/1.4.1:
     dev: false
     engines:
@@ -27,7 +34,7 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
-  /handy-redis/1.8.0:
+  /handy-redis/1.8.3:
     dependencies:
       '@types/redis': 2.8.16
       redis: 3.0.2
@@ -35,7 +42,11 @@ packages:
     engines:
       node: '>= 8.0.0'
     resolution:
-      integrity: sha512-a1amZUoG+fD8MMg+3A4QaMRznecQZa5a3+tquV0LDkxu315EcUj9Ix3vgp1LY4hdTx1nxjepTCbxug4dU0KCDA==
+      integrity: sha512-TMC47NAaKuUC5jDMlCLNvNDIiNhyUO/ONEM7Xsbv3kiTwR9E1hsx7zctPH4fEoSKvro2gPs8bBb4+Nwscigz2A==
+  /lodash/4.17.20:
+    dev: false
+    resolution:
+      integrity: sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
   /redis-commands/1.5.0:
     dev: false
     resolution:
@@ -65,15 +76,26 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-PNhLCrjU6vKVuMOyFu7oSP296mwBkcE6lrAjruBYG5LgdSqtRBoVQIylrMyVZD/lkF24RSNNatzvYag6HRBHjQ==
-  /typescript/3.8.2:
+  /rsmq/0.12.2:
+    dependencies:
+      '@types/redis': 2.8.26
+      lodash: 4.17.20
+      redis: 3.0.2
+    dev: false
+    engines:
+      node: '> 6.0.0'
+    resolution:
+      integrity: sha512-Rr1S/YH3hQ1X4rLSkHXL9odEJldE/wtfvZxPAMRyNR3Bb5d6wiRERIAaM6CfINNd9V2H/wdoC/yNixiv+Ehvjw==
+  /typescript/4.0.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 specifiers:
-  '@types/node': ^13.7.6
+  '@types/node': ^14.6.2
   dotenv: ^8.2.0
-  handy-redis: ^1.8.0
-  typescript: ^3.8.2
+  handy-redis: ^1.8.3
+  rsmq: ^0.12.2
+  typescript: ^4.0.2

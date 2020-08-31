@@ -1,36 +1,39 @@
 dependencies:
-  '@hapi/joi': 17.1.0
+  '@hapi/joi': 17.1.1
 devDependencies:
-  '@types/hapi__joi': 16.0.12
-  '@types/node': 13.7.6
+  '@types/hapi__joi': 17.1.4
+  '@types/node': 14.6.2
   dotenv: 8.2.0
-  typescript: 3.8.2
+  typescript: 4.0.2
 lockfileVersion: 5.1
 packages:
-  /@hapi/address/4.0.0:
+  /@hapi/address/4.1.0:
     dependencies:
       '@hapi/hoek': 9.0.3
     dev: false
     resolution:
-      integrity: sha512-GDDpkCdSUfkQCznmWUHh9dDN85BWf/V8TFKQ2JLuHdGB4Yy3YTEGBzZxoBNxfNBEvreSR/o+ZxBBSNNEVzY+lQ==
+      integrity: sha512-SkszZf13HVgGmChdHo/PxchnSaCJ6cetVqLzyciudzZRT0jcOouIF/Q93mgjw8cce+D+4F4C1Z/WrfFN+O3VHQ==
   /@hapi/formula/2.0.0:
+    deprecated: This version has been deprecated and is no longer supported or maintained
     dev: false
     resolution:
       integrity: sha512-V87P8fv7PI0LH7LiVi8Lkf3x+KCO7pQozXRssAHNXXL9L1K+uyu4XypLXwxqVDKgyQai6qj3/KteNlrqDx4W5A==
   /@hapi/hoek/9.0.3:
+    deprecated: This version has been deprecated and is no longer supported or maintained
     dev: false
     resolution:
       integrity: sha512-jKtjLLDiH95b002sJVc5c74PE6KKYftuyVdVmsuYId5stTaWcRFqE+5ukZI4gDUKjGn8wv2C3zPn3/nyjEI7gg==
-  /@hapi/joi/17.1.0:
+  /@hapi/joi/17.1.1:
     dependencies:
-      '@hapi/address': 4.0.0
+      '@hapi/address': 4.1.0
       '@hapi/formula': 2.0.0
       '@hapi/hoek': 9.0.3
       '@hapi/pinpoint': 2.0.0
       '@hapi/topo': 5.0.0
+    deprecated: 'joi is leaving the @hapi organization and moving back to ''joi'' (https://github.com/sideway/joi/issues/2411)'
     dev: false
     resolution:
-      integrity: sha512-ob67RcPlwRWxBzLCnWvcwx5qbwf88I3ykD7gcJLWOTRfLLgosK7r6aeChz4thA3XRvuBfI0KB1tPVl2EQFlPXw==
+      integrity: sha512-p4DKeZAoeZW4g3u7ZeRo+vCDuSDgSvtsB/NpfjXEHTUjSeINAi/RrVOWiVQ1isaoLzMvFEhe8n5065mQq1AdQg==
   /@hapi/pinpoint/2.0.0:
     dev: false
     resolution:
@@ -41,30 +44,30 @@ packages:
     dev: false
     resolution:
       integrity: sha512-tFJlT47db0kMqVm3H4nQYgn6Pwg10GTZHb1pwmSiv1K4ks6drQOtfEF5ZnPjkvC+y4/bUPHK+bc87QvLcL+WMw==
-  /@types/hapi__joi/16.0.12:
+  /@types/hapi__joi/17.1.4:
     dev: true
     resolution:
-      integrity: sha512-xJYifuz59jXdWY5JMS15uvA3ycS3nQYOGqoIIE0+fwQ0qI3/4CxBc6RHsOTp6wk9M0NWEdpcTl02lOQOKMifbQ==
-  /@types/node/13.7.6:
+      integrity: sha512-gqY3TeTyZvnyNhM02HgyCIoGIWsTFMnuzMfnD8evTsr1KIfueGJaz+QC77j+dFvhZ5cJArUNjDRHUjPxNohzGA==
+  /@types/node/14.6.2:
     dev: true
     resolution:
-      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
   /dotenv/8.2.0:
     dev: true
     engines:
       node: '>=8'
     resolution:
       integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
-  /typescript/3.8.2:
+  /typescript/4.0.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 specifiers:
-  '@hapi/joi': ^17.1.0
-  '@types/hapi__joi': ^16.0.12
-  '@types/node': ^13.7.6
+  '@hapi/joi': ^17.1.1
+  '@types/hapi__joi': ^17.1.4
+  '@types/node': ^14.6.2
   dotenv: ^8.2.0
-  typescript: ^3.8.2
+  typescript: ^4.0.2

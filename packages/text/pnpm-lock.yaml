@@ -1,64 +1,239 @@
 dependencies:
-  crypto-random-string: 3.1.0
+  '@types/bcryptjs': 2.4.2
+  '@types/ms': 0.7.31
+  bcryptjs: 2.4.3
+  change-case: 4.1.1
+  crypto-random-string: 3.2.0
   hashids: 2.2.1
   ip-anonymize: 0.1.0
-  slugify: 1.3.6
+  ip-range-check: 0.2.0
+  matcher: 3.0.0
+  ms: 2.1.2
+  slugify: 1.4.5
 devDependencies:
-  '@types/node': 13.7.6
+  '@types/node': 14.6.2
   dotenv: 8.2.0
-  typescript: 3.8.2
+  typescript: 4.0.2
 lockfileVersion: 5.1
 packages:
-  /@types/node/13.7.6:
+  /@types/bcryptjs/2.4.2:
+    dev: false
+    resolution:
+      integrity: sha512-LiMQ6EOPob/4yUL66SZzu6Yh77cbzJFYll+ZfaPiPPFswtIlA/Fs1MzdKYA7JApHU49zQTbJGX3PDmCpIdDBRQ==
+  /@types/ms/0.7.31:
+    dev: false
+    resolution:
+      integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==
+  /@types/node/14.6.2:
     dev: true
     resolution:
-      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
-  /crypto-random-string/3.1.0:
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
+  /bcryptjs/2.4.3:
+    dev: false
+    resolution:
+      integrity: sha1-mrVie5PmBiH/fNrF2pczAn3x0Ms=
+  /camel-case/4.1.1:
+    dependencies:
+      pascal-case: 3.1.1
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-7fa2WcG4fYFkclIvEmxBbTvmibwF2/agfEBc6q3lOpVu0A13ltLsA+Hr/8Hp6kp5f+G7hKi6t8lys6XxP+1K6Q==
+  /capital-case/1.0.3:
+    dependencies:
+      no-case: 3.0.3
+      tslib: 1.13.0
+      upper-case-first: 2.0.1
+    dev: false
+    resolution:
+      integrity: sha512-OlUSJpUr7SY0uZFOxcwnDOU7/MpHlKTZx2mqnDYQFrDudXLFm0JJ9wr/l4csB+rh2Ug0OPuoSO53PqiZBqno9A==
+  /change-case/4.1.1:
+    dependencies:
+      camel-case: 4.1.1
+      capital-case: 1.0.3
+      constant-case: 3.0.3
+      dot-case: 3.0.3
+      header-case: 2.0.3
+      no-case: 3.0.3
+      param-case: 3.0.3
+      pascal-case: 3.1.1
+      path-case: 3.0.3
+      sentence-case: 3.0.3
+      snake-case: 3.0.3
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-qRlUWn/hXnX1R1LBDF/RelJLiqNjKjUqlmuBVSEIyye8kq49CXqkZWKmi8XeUAdDXWFOcGLUMZ+aHn3Q5lzUXw==
+  /constant-case/3.0.3:
+    dependencies:
+      no-case: 3.0.3
+      tslib: 1.13.0
+      upper-case: 2.0.1
+    dev: false
+    resolution:
+      integrity: sha512-FXtsSnnrFYpzDmvwDGQW+l8XK3GV1coLyBN0eBz16ZUzGaZcT2ANVCJmLeuw2GQgxKHQIe9e0w2dzkSfaRlUmA==
+  /crypto-random-string/3.2.0:
     dependencies:
       type-fest: 0.8.1
     dev: false
     engines:
       node: '>=8'
     resolution:
-      integrity: sha512-Tip3yGB+bA7B0W8E4K4mNf2rZhu5r2G5Tb89/utEl5tP1QuLjTF/S9a1b8ifDrR4ORc9Utf6tscpSEtBY3YcPQ==
+      integrity: sha512-8vPu5bsKaq2uKRy3OL7h1Oo7RayAWB8sYexLKAqvCXVib8SxgbmoF1IN4QMKjBv8uI8mp5gPPMbiRah25GMrVQ==
+  /dot-case/3.0.3:
+    dependencies:
+      no-case: 3.0.3
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-7hwEmg6RiSQfm/GwPL4AAWXKy3YNNZA3oFv2Pdiey0mwkRCPZ9x6SZbkLcn8Ma5PYeVokzoD4Twv2n7LKp5WeA==
   /dotenv/8.2.0:
     dev: true
     engines:
       node: '>=8'
     resolution:
       integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
+  /escape-string-regexp/4.0.0:
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-TtpcNJ3XAzx3Gq8sWRzJaVajRs0uVxA2YAkdb1jm2YkPz4G6egUFAyA3n5vtEIZefPk5Wa4UXbKuS5fKkJWdgA==
   /hashids/2.2.1:
     dev: false
     resolution:
       integrity: sha512-+hQeKWwpSDiWFeu/3jKUvwboE4Z035gR6FnpscbHPOEEjCbgv2px9/Mlb3O0nOTRyZOw4MMFRYfVL3zctOV6OQ==
+  /header-case/2.0.3:
+    dependencies:
+      capital-case: 1.0.3
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-LChe/V32mnUQnTwTxd3aAlNMk8ia9tjCDb/LjYtoMrdAPApxLB+azejUk5ERZIZdIqvinwv6BAUuFXH/tQPdZA==
   /ip-anonymize/0.1.0:
     dev: false
     resolution:
       integrity: sha512-cZJu+N5JKKFGMK0eEQWNaQMn2EhCysciVM6eotCJwfqotj16BTfVchKsJCH6mQAT9N0GC7oWRcsZ6Lb8dDiwTA==
-  /slugify/1.3.6:
+  /ip-range-check/0.2.0:
+    dependencies:
+      ipaddr.js: 1.9.1
+    dev: false
+    resolution:
+      integrity: sha512-oaM3l/3gHbLlt/tCWLvt0mj1qUaI+STuRFnUvARGCujK9vvU61+2JsDpmkMzR4VsJhuFXWWgeKKVnwwoFfzCqw==
+  /ipaddr.js/1.9.1:
     dev: false
     engines:
-      node: '>=4.0.0'
+      node: '>= 0.10'
     resolution:
-      integrity: sha512-wA9XS475ZmGNlEnYYLPReSfuz/c3VQsEMoU43mi6OnKMCdbnFXd4/Yg7J0lBv8jkPolacMpOrWEaoYxuE1+hoQ==
+      integrity: sha512-0KI/607xoxSToH7GjN1FfSbLoU0+btTicjsQSWQlh/hZykN8KpmMf7uYwPW3R+akZ6R/w18ZlXSHBYXiYUPO3g==
+  /lower-case/2.0.1:
+    dependencies:
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-LiWgfDLLb1dwbFQZsSglpRj+1ctGnayXz3Uv0/WO8n558JycT5fg6zkNcnW0G68Nn0aEldTFeEfmjCfmqry/rQ==
+  /matcher/3.0.0:
+    dependencies:
+      escape-string-regexp: 4.0.0
+    dev: false
+    engines:
+      node: '>=10'
+    resolution:
+      integrity: sha512-OkeDaAZ/bQCxeFAozM55PKcKU0yJMPGifLwV4Qgjitu+5MoAfSQN4lsLJeXZ1b8w0x+/Emda6MZgXS1jvsapng==
+  /ms/2.1.2:
+    dev: false
+    resolution:
+      integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==
+  /no-case/3.0.3:
+    dependencies:
+      lower-case: 2.0.1
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-ehY/mVQCf9BL0gKfsJBvFJen+1V//U+0HQMPrWct40ixE4jnv0bfvxDbWtAHL9EcaPEOJHVVYKoQn1TlZUB8Tw==
+  /param-case/3.0.3:
+    dependencies:
+      dot-case: 3.0.3
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-VWBVyimc1+QrzappRs7waeN2YmoZFCGXWASRYX1/rGHtXqEcrGEIDm+jqIwFa2fRXNgQEwrxaYuIrX0WcAguTA==
+  /pascal-case/3.1.1:
+    dependencies:
+      no-case: 3.0.3
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-XIeHKqIrsquVTQL2crjq3NfJUxmdLasn3TYOU0VBM+UX2a6ztAWBlJQBePLGY7VHW8+2dRadeIPK5+KImwTxQA==
+  /path-case/3.0.3:
+    dependencies:
+      dot-case: 3.0.3
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-UMFU6UETFpCNWbIWNczshPrnK/7JAXBP2NYw80ojElbQ2+JYxdqWDBkvvqM93u4u6oLmuJ/tPOf2tM8KtXv4eg==
+  /sentence-case/3.0.3:
+    dependencies:
+      no-case: 3.0.3
+      tslib: 1.13.0
+      upper-case-first: 2.0.1
+    dev: false
+    resolution:
+      integrity: sha512-ZPr4dgTcNkEfcGOMFQyDdJrTU9uQO1nb1cjf+nuzb6FxgMDgKddZOM29qEsB7jvsZSMruLRcL2KfM4ypKpa0LA==
+  /slugify/1.4.5:
+    dev: false
+    engines:
+      node: '>=8.0.0'
+    resolution:
+      integrity: sha512-WpECLAgYaxHoEAJ8Q1Lo8HOs1ngn7LN7QjXgOLbmmfkcWvosyk4ZTXkTzKyhngK640USTZUlgoQJfED1kz5fnQ==
+  /snake-case/3.0.3:
+    dependencies:
+      dot-case: 3.0.3
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-WM1sIXEO+rsAHBKjGf/6R1HBBcgbncKS08d2Aqec/mrDSpU80SiOU41hO7ny6DToHSyrlwTYzQBIK1FPSx4Y3Q==
+  /tslib/1.13.0:
+    dev: false
+    resolution:
+      integrity: sha512-i/6DQjL8Xf3be4K/E6Wgpekn5Qasl1usyw++dAA35Ue5orEn65VIxOA+YvNNl9HV3qv70T7CNwjODHZrLwvd1Q==
   /type-fest/0.8.1:
     dev: false
     engines:
       node: '>=8'
     resolution:
       integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==
-  /typescript/3.8.2:
+  /typescript/4.0.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
+  /upper-case-first/2.0.1:
+    dependencies:
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-105J8XqQ+9RxW3l9gHZtgve5oaiR9TIwvmZAMAIZWRHe00T21cdvewKORTlOJf/zXW6VukuTshM+HXZNWz7N5w==
+  /upper-case/2.0.1:
+    dependencies:
+      tslib: 1.13.0
+    dev: false
+    resolution:
+      integrity: sha512-laAsbea9SY5osxrv7S99vH9xAaJKrw5Qpdh4ENRLcaxipjKsiaBwiAsxfa8X5mObKNTQPsupSq0J/VIxsSJe3A==
 specifiers:
-  '@types/node': ^13.7.6
-  crypto-random-string: ^3.1.0
+  '@types/bcryptjs': ^2.4.2
+  '@types/ms': ^0.7.31
+  '@types/node': ^14.6.2
+  bcryptjs: ^2.4.3
+  change-case: ^4.1.1
+  crypto-random-string: ^3.2.0
   dotenv: ^8.2.0
   hashids: ^2.2.1
   ip-anonymize: ^0.1.0
-  slugify: ^1.3.6
-  typescript: ^3.8.2
+  ip-range-check: ^0.2.0
+  matcher: ^3.0.0
+  ms: ^2.1.2
+  slugify: ^1.4.5
+  typescript: ^4.0.2

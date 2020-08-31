@@ -1,22 +1,22 @@
 dependencies:
-  '@types/signale': 1.2.1
-  http-status-codes: 1.4.0
+  '@types/signale': 1.4.1
+  http-status-codes: 2.1.2
   signale: 1.4.0
 devDependencies:
-  '@types/node': 13.7.6
+  '@types/node': 14.6.2
   dotenv: 8.2.0
-  typescript: 3.8.2
+  typescript: 4.0.2
 lockfileVersion: 5.1
 packages:
-  /@types/node/13.7.6:
+  /@types/node/14.6.2:
     resolution:
-      integrity: sha512-eyK7MWD0R1HqVTp+PtwRgFeIsemzuj4gBFSQxfPHY5iMjS7474e5wq+VFgTcdpyHeNxyKSaetYAjdMLJlKoWqA==
-  /@types/signale/1.2.1:
+      integrity: sha512-onlIwbaeqvZyniGPfdw/TEhKIh79pz66L1q06WUQqJLnAb6wbjvOtepLYTGHTqzdXgBYIE3ZdmqHDGsRsbBz7A==
+  /@types/signale/1.4.1:
     dependencies:
-      '@types/node': 13.7.6
+      '@types/node': 14.6.2
     dev: false
     resolution:
-      integrity: sha512-mV6s2VgcBC16Jb+1EwulgRrrZBT93V4JCILkNPg31rvvSK6LRQQGU8R/SUivgHjDZ5LJZu/yL2kMF8j85YQTnA==
+      integrity: sha512-05d9fUDqRnt36rizLgo38SbPTrkMzdhXpvSHSAhxzokgIUPGNUoXHV0zYjPpTd4IryDADJ0mGHpfJ/Yhjyh9JQ==
   /ansi-styles/3.2.1:
     dependencies:
       color-convert: 1.9.3
@@ -89,10 +89,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-tdRU3CGZriJWmfNGfloH87lVuv0=
-  /http-status-codes/1.4.0:
+  /http-status-codes/2.1.2:
     dev: false
     resolution:
-      integrity: sha512-JrT3ua+WgH8zBD3HEJYbeEgnuQaAnUeRRko/YojPAJjGmIfGD3KPU/asLdsLwKjfxOmQe5nXMQ0pt/7MyapVbQ==
+      integrity: sha512-zpZ1nBcoR0j1FLQ7xbXXBy1z/yUfAi+0a5IZBoZnmOseYkaljdzQ17ZeVXFlK23IbLxMJn6aWI0uU92DQQrG0g==
   /is-arrayish/0.2.1:
     dev: false
     resolution:
@@ -197,17 +197,17 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
-  /typescript/3.8.2:
+  /typescript/4.0.2:
     dev: true
     engines:
       node: '>=4.2.0'
     hasBin: true
     resolution:
-      integrity: sha512-EgOVgL/4xfVrCMbhYKUQTdF37SQn4Iw73H5BgCrF1Abdun7Kwy/QZsE/ssAy0y4LxBbvua3PIbFsbRczWWnDdQ==
+      integrity: sha512-e4ERvRV2wb+rRZ/IQeb3jm2VxBsirQLpQhdxplZ2MEzGvDkkMmPglecnNDfSUBivMjP93vRbngYYDQqQ/78bcQ==
 specifiers:
-  '@types/node': ^13.7.6
-  '@types/signale': ^1.2.1
+  '@types/node': ^14.6.2
+  '@types/signale': ^1.4.1
   dotenv: ^8.2.0
-  http-status-codes: ^1.4.0
+  http-status-codes: ^2.1.2
   signale: ^1.4.0
-  typescript: ^3.8.2
+  typescript: ^4.0.2

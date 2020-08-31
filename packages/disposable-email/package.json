@@ -12,19 +12,19 @@
     "build": "tsc"
   },
   "devDependencies": {
-    "@staart/errors": "^2.0.1",
-    "@staart/validate": "^3.0.0",
-    "@types/hapi__joi": "^16.0.12",
+    "@staart/errors": "^2.1.1",
+    "@staart/validate": "^3.0.1",
+    "@types/hapi__joi": "^17.1.4",
     "dotenv": "^8.2.0",
-    "typescript": "^3.8.2"
+    "typescript": "^4.0.2"
   },
   "dependencies": {
-    "disposable-email-domains": "^1.0.52",
-    "matcher": "^2.1.0"
+    "disposable-email-domains": "^1.0.57",
+    "matcher": "^3.0.0"
   },
   "peerDependencies": {
-    "@staart/errors": "^2.0.1",
-    "@staart/validate": "^3.0.0",
+    "@staart/errors": "^2.1.1",
+    "@staart/validate": "^3.0.1",
     "dotenv": "^8.2.0"
   }
 }
