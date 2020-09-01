@@ -33,7 +33,7 @@ export const setupTransporter = () => {
   } else {
     transporter = createTransport({
       host: EMAIL_HOST,
-      port: EMAIL_PORT,
+      port: Number(EMAIL_PORT),
       secure: true,
       auth: {
         user: EMAIL_FROM,
