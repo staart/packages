@@ -7,6 +7,7 @@ config();
 
 const EMAIL_FROM = process.env.EMAIL_FROM || "";
 const EMAIL_HOST = process.env.EMAIL_HOST || "";
+const EMAIL_PORT = process.env.EMAIL_PORT || 465;
 const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD || "";
 
 const SES_SECRET = process.env.SES_SECRET || "";
@@ -32,7 +33,7 @@ export const setupTransporter = () => {
   } else {
     transporter = createTransport({
       host: EMAIL_HOST,
-      port: 465,
+      port: EMAIL_PORT,
       secure: true,
       auth: {
         user: EMAIL_FROM,
