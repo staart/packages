@@ -147,13 +147,11 @@ const writeServerFile = async () => {
   require("@babel/polyfill");
   import { Staart } from "./app";
   import { PORT, SENTRY_DSN } from "./_staart/config";
-  import { init } from "@sentry/node";
+  import { config } from "@anandchowdhary/cosmic";
   import "./init-tests";
   
-  if (SENTRY_DSN) init({ dsn: SENTRY_DSN });
-  
   const staart = new Staart();
-  staart.start(PORT);`
+  staart.start(config<number>("port") ?? 80);`
   );
 };
 
