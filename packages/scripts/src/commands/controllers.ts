@@ -146,7 +146,6 @@ const writeServerFile = async () => {
   require("regenerator-runtime");
   require("@babel/polyfill");
   import { Staart } from "./app";
-  import { PORT, SENTRY_DSN } from "./_staart/config";
   import { config } from "@anandchowdhary/cosmic";
   import "./init-tests";
   
