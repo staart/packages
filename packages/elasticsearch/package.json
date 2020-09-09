@@ -20,7 +20,7 @@
   "dependencies": {
     "@elastic/elasticsearch": "^7.9.0",
     "aws-elasticsearch-connector": "^9.0.0",
-    "aws-sdk": "^2.742.0"
+    "aws-sdk": "^2.748.0"
   },
   "peerDependencies": {
     "@staart/errors": "^2.1.1",

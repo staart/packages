@@ -15,28 +15,32 @@ if (AWS_ELASTIC_HOST || ELASTIC_HOST) elasticSearchEnabled = true;
 
 export { elasticSearchEnabled };
 
-const elasticSearchConfig = AWS_ELASTIC_HOST
-  ? {
-      node: AWS_ELASTIC_HOST,
-      Connection: AmazonConnection,
-      awsConfig: {
-        credentials: {
-          accessKeyId: AWS_ELASTIC_ACCESS_KEY,
-          secretAccessKey: AWS_ELASTIC_SECRET_KEY,
-        },
-      },
-    }
-  : {
-      node: ELASTIC_HOST,
-    };
+// const elasticSearchConfig = AWS_ELASTIC_HOST
+//   ? {
+//       node: AWS_ELASTIC_HOST,
+//       Connection: AmazonConnection,
+//       awsConfig: {
+//         credentials: {
+//           accessKeyId: AWS_ELASTIC_ACCESS_KEY,
+//           secretAccessKey: AWS_ELASTIC_SECRET_KEY,
+//         },
+//       },
+//     }
+//   : {
+//       node: ELASTIC_HOST,
+//     };
 
-/**
- * Client doesn't support the "awsConfig" property,
- * which is part of "aws-elasticsearch-connector"
- */
-export const elasticSearch = elasticSearchEnabled
-  ? (new (Client as any)(elasticSearchConfig) as Client)
-  : ({} as Client);
+// /**
+//  * Client doesn't support the "awsConfig" property,
+//  * which is part of "aws-elasticsearch-connector"
+//  */
+// export const elasticSearch = elasticSearchEnabled
+//   ? (new (Client as any)(elasticSearchConfig) as Client)
+//   : ({} as Client);
+
+export const elasticSearch = new Client({
+  node: AWS_ELASTIC_HOST,
+});
 
 export const cleanElasticSearchQueryResponse = (
   response: any,
