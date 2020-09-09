@@ -36,7 +36,7 @@ export default class Build extends Command {
 
     mkdir("-p", ".staart");
     cp(".env", ".staart/.env");
-    cp(".env", ".staart/prisma/.env");
+    cp(".env", "./prisma/.env");
     cp(".staartrc", ".staart/.staartrc");
     cp("-r", "src", ".staart");
     cp("-r", "static", ".staart");
