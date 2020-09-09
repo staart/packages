@@ -1,4 +1,4 @@
 declare module "aws-elasticsearch-connector" {
-  const AmazonConnection: any;
-  const AmazonTransport: any;
+  function connector(config: AWS.Config): any;
+  export = connector;
 }

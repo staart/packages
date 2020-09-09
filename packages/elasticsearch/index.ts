@@ -1,45 +1,28 @@
 import { config } from "dotenv";
 import { Client } from "@elastic/elasticsearch";
+import AWS from "aws-sdk";
 import { RESOURCE_NOT_FOUND } from "@staart/errors";
-import { AmazonConnection } from "aws-elasticsearch-connector";
+import createAwsElasticsearchConnector from "aws-elasticsearch-connector";
 
 config();
 
-const ELASTIC_HOST = process.env.ELASTIC_HOST || "";
-const AWS_ELASTIC_ACCESS_KEY = process.env.AWS_ELASTIC_ACCESS_KEY || "";
-const AWS_ELASTIC_SECRET_KEY = process.env.AWS_ELASTIC_SECRET_KEY || "";
-const AWS_ELASTIC_HOST = process.env.AWS_ELASTIC_HOST || "";
-
 let elasticSearchEnabled = false;
-if (AWS_ELASTIC_HOST || ELASTIC_HOST) elasticSearchEnabled = true;
+if (process.env.AWS_ELASTIC_HOST || process.env.ELASTIC_HOST)
+  elasticSearchEnabled = true;
+
+const awsConfig = new AWS.Config({
+  accessKeyId: process.env.AWS_ELASTIC_ACCESS_KEY,
+  secretAccessKey: process.env.AWS_ELASTIC_SECRET_KEY,
+  region: process.env.AWS_ELASTIC_REGION,
+});
 
 export { elasticSearchEnabled };
 
-// const elasticSearchConfig = AWS_ELASTIC_HOST
-//   ? {
-//       node: AWS_ELASTIC_HOST,
-//       Connection: AmazonConnection,
-//       awsConfig: {
-//         credentials: {
-//           accessKeyId: AWS_ELASTIC_ACCESS_KEY,
-//           secretAccessKey: AWS_ELASTIC_SECRET_KEY,
-//         },
-//       },
-//     }
-//   : {
-//       node: ELASTIC_HOST,
-//     };
-
-// /**
-//  * Client doesn't support the "awsConfig" property,
-//  * which is part of "aws-elasticsearch-connector"
-//  */
-// export const elasticSearch = elasticSearchEnabled
-//   ? (new (Client as any)(elasticSearchConfig) as Client)
-//   : ({} as Client);
-
 export const elasticSearch = new Client({
-  node: AWS_ELASTIC_HOST,
+  ...(process.env.AWS_ELASTIC_ACCESS_KEY && process.env.AWS_ELASTIC_SECRET_KEY
+    ? createAwsElasticsearchConnector(awsConfig)
+    : undefined),
+  node: process.env.AWS_ELASTIC_HOST || process.env.ELASTIC_HOST,
 });
 
 export const cleanElasticSearchQueryResponse = (
