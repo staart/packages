@@ -28,7 +28,6 @@ export default class Dev extends Command {
       touch(".env");
       mkdir("-p", ".staart");
       cp(".env", ".staart/.env");
-      cp(".staartrc", ".staart/.staartrc");
       cp("-r", "src", ".staart");
       cp("-r", "static", ".staart");
       cp("package.json", ".staart");
