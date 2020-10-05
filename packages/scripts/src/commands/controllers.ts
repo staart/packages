@@ -145,8 +145,9 @@ const writeServerFile = async () => {
     `
   require("regenerator-runtime");
   require("@babel/polyfill");
+  import { config, cosmicSync } from "@anandchowdhary/cosmic";
+  cosmicSync("staart");
   import { Staart } from "./app";
-  import { config } from "@anandchowdhary/cosmic";
   import "./init-tests";
   
   const staart = new Staart();
